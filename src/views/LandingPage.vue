@@ -1,17 +1,29 @@
 <template>
   <div class="pageDisplay">
-    <div class="component"><FirstComponent /></div>
-    <div class="component"><SecondComponent /></div>
-    <div class="component"><ThirdComponent /></div>
-    <div class="component"><FourthComponent /></div>
+    <div class="component">
+      <FirstComponent :inView="currentComponent === 0" />
+    </div>
+    <div class="component">
+      <SecondComponent :inView="currentComponent === 1" />
+    </div>
+    <div class="component">
+      <ThirdComponent :inView="currentComponent === 2" />
+    </div>
+    <div class="component">
+      <FourthComponent :inView="currentComponent === 3" />
+    </div>
   </div>
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FirstComponent from "@/components/FirstComponent.vue";
 import SecondComponent from "@/components/SecondComponent.vue";
 import ThirdComponent from "@/components/ThirdComponent.vue";
 import FourthComponent from "@/components/FourthComponent.vue";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
   components: {
@@ -22,54 +34,76 @@ export default {
   },
   data() {
     return {
-      isScrolling: false,
+      currentComponent: 0,
     };
   },
   mounted() {
-    window.addEventListener("scroll", this.handleScroll);
+    this.initScrollTrigger();
+    window.addEventListener("scroll", this.updateCurrentComponent);
   },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.handleScroll);
+  destroyed() {
+    window.removeEventListener("scroll", this.updateCurrentComponent);
   },
   methods: {
-    handleScroll() {
-      if (this.isScrolling) return;
-      this.isScrolling = true;
+    initScrollTrigger() {
+      let component = Array.from(document.querySelectorAll(".component"));
+      let tops = component.map((component, index) =>
+        ScrollTrigger.create({
+          id: `component_${index}`,
+          trigger: component,
+          markers: false,
+          start: "top top",
+        })
+      );
 
-      setTimeout(() => {
-        const scrollTop = document.documentElement.scrollTop;
-        const components = document.querySelectorAll(".component");
+      let container = document.querySelector(".pageDisplay");
 
-        for (let i = 0; i < components.length; i++) {
-          const component = components[i];
-          const componentTop = component.offsetTop;
-          const componentHeight = component.offsetHeight;
-          const halfwayPoint = componentTop + componentHeight / 2;
+      ScrollTrigger.create({
+        id: "snapper",
+        trigger: container,
+        start: "top bottom",
+        end: "bottom bottom",
+        markers: false,
+        snap: {
+          snapTo: (progress, self) => {
+            let componentStarts = tops.map((st) => st.start),
+              snapScroll = gsap.utils.snap(componentStarts, self.scroll()),
+              normalizedValue = gsap.utils.normalize(
+                self.start,
+                self.end,
+                snapScroll
+              );
+            return normalizedValue;
+          },
+          duration: 0.5,
+          ease: "power1.out",
+        },
+      });
+    },
+    updateCurrentComponent() {
+      const windowHeight = window.innerHeight;
+      const scrollPosition = window.scrollY;
+      const components = document.querySelectorAll(".component");
 
-          if (
-            scrollTop >= halfwayPoint &&
-            scrollTop < halfwayPoint + window.innerHeight
-          ) {
-            if (i + 1 < components.length) {
-              components[i + 1].scrollIntoView({ behavior: "smooth" });
-            }
-            break;
+      // Iterate through each component to find which one is more than 50% visible on the screen
+      for (let i = 0; i < components.length; i++) {
+        const component = components[i];
+        const componentTop = component.offsetTop;
+        const componentBottom = componentTop + component.offsetHeight;
+
+        // Check if the component is more than 50% visible
+        if (
+          componentTop < scrollPosition + windowHeight / 2 &&
+          componentBottom > scrollPosition + windowHeight / 2
+        ) {
+          // Update currentComponent if it's different from the index of the component
+          if (this.currentComponent !== i) {
+            this.currentComponent = i;
           }
-
-          // If scrolling up and not yet passing the halfway point of the previous component
-          if (
-            scrollTop < halfwayPoint &&
-            i > 1 &&
-            scrollTop >=
-              components[i - 1].offsetTop + components[i - 1].offsetHeight / 2
-          ) {
-            components[i - 1].scrollIntoView({ behavior: "smooth" });
-            break;
-          }
+          break; // Break the loop once we find the component in view
         }
-
-        this.isScrolling = false;
-      }, 600); // Adjust the delay as needed
+      }
+      console.log(this.currentComponent);
     },
   },
 };
