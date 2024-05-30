@@ -9,8 +9,15 @@
     <div class="component">
       <ThirdComponent :inView="currentComponent === 2" />
     </div>
+
     <div class="component">
-      <FourthComponent :inView="currentComponent === 3" />
+      <WhatWeDoComponent :inView="currentComponent === 3" />
+    </div>
+    <div class="component">
+      <TheMissionComponent :inView="currentComponent === 4" />
+    </div>
+    <div class="component">
+      <ContactUsComponent :inView="currentComponent === 4" />
     </div>
   </div>
 </template>
@@ -21,7 +28,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FirstComponent from "@/components/FirstComponent.vue";
 import SecondComponent from "@/components/SecondComponent.vue";
 import ThirdComponent from "@/components/ThirdComponent.vue";
-import FourthComponent from "@/components/FourthComponent.vue";
+import ContactUsComponent from "@/components/ContactUsComponent.vue";
+import WhatWeDoComponent from "@/components/WhatWeDoComponent.vue";
+import TheMissionComponent from "@/components/TheMissionComponent.vue";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,7 +39,9 @@ export default {
     FirstComponent,
     SecondComponent,
     ThirdComponent,
-    FourthComponent,
+    ContactUsComponent,
+    WhatWeDoComponent,
+    TheMissionComponent,
   },
   data() {
     return {
@@ -46,39 +57,42 @@ export default {
   },
   methods: {
     initScrollTrigger() {
-      let component = Array.from(document.querySelectorAll(".component"));
-      let tops = component.map((component, index) =>
+      if (window.innerWidth > 768) {
+        // Adjust the threshold as needed
+        let component = Array.from(document.querySelectorAll(".component"));
+        let tops = component.map((component, index) =>
+          ScrollTrigger.create({
+            id: `component_${index}`,
+            trigger: component,
+            markers: false,
+            start: "top top",
+          })
+        );
+
+        let container = document.querySelector(".pageDisplay");
+
         ScrollTrigger.create({
-          id: `component_${index}`,
-          trigger: component,
+          id: "snapper",
+          trigger: container,
+          start: "top bottom",
+          end: "bottom bottom",
           markers: false,
-          start: "top top",
-        })
-      );
-
-      let container = document.querySelector(".pageDisplay");
-
-      ScrollTrigger.create({
-        id: "snapper",
-        trigger: container,
-        start: "top bottom",
-        end: "bottom bottom",
-        markers: false,
-        snap: {
-          snapTo: (progress, self) => {
-            let componentStarts = tops.map((st) => st.start),
-              snapScroll = gsap.utils.snap(componentStarts, self.scroll()),
-              normalizedValue = gsap.utils.normalize(
-                self.start,
-                self.end,
-                snapScroll
-              );
-            return normalizedValue;
+          snap: {
+            snapTo: (progress, self) => {
+              let componentStarts = tops.map((st) => st.start),
+                snapScroll = gsap.utils.snap(componentStarts, self.scroll()),
+                normalizedValue = gsap.utils.normalize(
+                  self.start,
+                  self.end,
+                  snapScroll
+                );
+              return normalizedValue;
+            },
+            duration: 0.5,
+            ease: "power1.out",
           },
-          duration: 0.5,
-          ease: "power1.out",
-        },
-      });
+        });
+      }
     },
     updateCurrentComponent() {
       const windowHeight = window.innerHeight;

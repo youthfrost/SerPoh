@@ -5,21 +5,25 @@
     </div>
     <div class="rightContainer">
       <div class="text-container">
-        <p class="bigWords">30 years of farming has instilled in us</p>
-        <p class="description line1">
-          The value of basics; quality and affordable beansprouts is of top
-          priority.
-        </p>
-        <p class="description line2">
-          The need for technology adoption and adaption; engineering can work
-          wonders.
-        </p>
-        <p class="description line3">
-          The beauty of open-mindedness; beansprouts reimagined.
-        </p>
-        <p class="description line4">
-          The fruit of perseverance; so stay calm and sow on.
-        </p>
+        <div class="bigWords-container">
+          <p class="bigWords">30 years of farming has instilled in us</p>
+        </div>
+        <div class="description-container">
+          <p class="description line1">
+            The value of basics; quality and affordable beansprouts is of top
+            priority.
+          </p>
+          <p class="description line2">
+            The need for technology adoption and adaption; engineering can work
+            wonders.
+          </p>
+          <p class="description line3">
+            The beauty of open-mindedness; beansprouts reimagined.
+          </p>
+          <p class="description line4">
+            The fruit of perseverance; so stay calm and sow on.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -32,28 +36,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-  props: {
-    inView: Boolean,
+  data() {
+    return {
+      animation: null,
+    };
   },
   mounted() {
-    if (this.inView) {
-      this.playAnimation();
-    } else {
-      this.resetAnimation();
-    }
-  },
-  watch: {
-    inView(newVal) {
-      if (newVal) {
-        this.playAnimation();
-      } else {
-        this.resetAnimation();
-      }
-    },
+    this.playAnimation();
   },
   methods: {
     playAnimation() {
-      gsap.fromTo(
+      this.animation = gsap.fromTo(
         this.$refs.secondComponent.querySelectorAll(".bigWords, .description"),
         { opacity: 0, y: 30 },
         {
@@ -63,18 +56,10 @@ export default {
           stagger: 0.3,
           scrollTrigger: {
             trigger: this.$refs.secondComponent,
-            start: "top 75%",
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play reverse play reverse",
           },
-        }
-      );
-    },
-    resetAnimation() {
-      gsap.to(
-        this.$refs.secondComponent.querySelectorAll(".bigWords, .description"),
-        {
-          opacity: 0,
-          y: 30,
-          duration: 1,
         }
       );
     },
@@ -83,6 +68,7 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.cdnfonts.com/css/maharlika");
 .secondComponent {
   display: flex;
   flex: 1;
@@ -90,27 +76,85 @@ export default {
   margin: 0;
   flex-direction: row;
   height: 100vh;
-  background-color: #b3c3b9;
+  background-color: #e8e4e4;
 }
 .leftContainer {
   flex: 0.5;
-  background-color: #b3c3b9;
+  background-color: #e8e4e4;
 }
 .rightContainer {
   flex: 0.5;
   display: flex;
-  align-items: center;
-}
-.bigWords {
-  font-size: 80px;
 }
 .text-container {
-  font-size: 25px;
-  margin-bottom: 19px;
-  color: white;
-  flex: 0.8;
+  font-size: 20px;
+  color: #818b7e;
+  display: flex;
+  flex-direction: column;
+}
+.bigWords-container {
+  flex: 0.4;
+  display: flex;
+  align-items: end;
+}
+.bigWords {
+  margin: 0;
+  font-size: 65px;
+  font-family: "Maharlika", sans-serif; /* Apply Maharlika font */
+}
+.description-container {
+  flex: 0.6;
 }
 .description {
-  margin-bottom: 20px; /* Adjust line spacing here */
+  margin-bottom: 30px; /* Adjust line spacing here */
+  font-family: "Maharlika", sans-serif; /* Apply Maharlika font */
+}
+
+@media (max-width: 1200px) {
+  .bigWords {
+    font-size: 55px;
+  }
+  .description {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 992px) {
+  .bigWords {
+    font-size: 45px;
+  }
+  .description {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .secondComponent {
+    flex-direction: column;
+  }
+  .rightContainer {
+    align-items: center;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .text-container {
+    flex: 1;
+  }
+  .bigWords {
+    font-size: 35px;
+  }
+  .description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .bigWords {
+    font-size: 25px;
+  }
+  .description {
+    font-size: 12px;
+  }
 }
 </style>

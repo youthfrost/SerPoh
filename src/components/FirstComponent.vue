@@ -1,16 +1,16 @@
 <template>
   <div class="firstComponent" ref="firstComponent">
-    <div class="leftContainer">
+    <div class="leftContainer" ref="leftContainer">
       <div class="container">
         <p>logo</p>
-        <p id="bigWords" class="bigWords">Farming Beansprouts Since 1992</p>
-        <p id="description" class="description">
-          Based in a Science-Based Skin Care That's Tailored to You
+        <p class="bigWords">Farming Beansprouts Since 1992</p>
+        <p class="description">
+          Discover the Power of Fresh, Nutritious Bean Sprouts
         </p>
         <button class="shopButton" @click="link">Shop</button>
       </div>
     </div>
-    <div class="rightContainer">
+    <div class="rightContainer" ref="rightContainer">
       <p>video</p>
     </div>
   </div>
@@ -23,20 +23,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-  props: {
-    inView: Boolean,
-  },
   mounted() {
     this.playAnimation();
-  },
-  watch: {
-    inView(newVal) {
-      if (newVal) {
-        this.playAnimation();
-      } else {
-        this.resetAnimation();
-      }
-    },
   },
   methods: {
     link() {
@@ -45,8 +33,8 @@ export default {
     },
     playAnimation() {
       gsap.fromTo(
-        this.$refs.firstComponent.querySelectorAll(
-          "#bigWords, #description, .shopButton, .rightContainer"
+        this.$refs.leftContainer.querySelectorAll(
+          ".bigWords, .description, .shopButton "
         ),
         { opacity: 0, y: 30 },
         {
@@ -55,21 +43,30 @@ export default {
           duration: 1.5,
           stagger: 0.3,
           scrollTrigger: {
-            trigger: this.$refs.firstComponent,
+            trigger: this.$refs.leftContainer,
             start: "top 75%",
+            end: "bottom 25%",
+            markers: true,
+            toggleActions: "play reverse play reverse",
           },
         }
       );
-    },
-    resetAnimation() {
-      gsap.to(
-        this.$refs.firstComponent.querySelectorAll(
-          "#bigWords, #description, .shopButton, .rightContainer"
-        ),
+
+      gsap.fromTo(
+        this.$refs.rightContainer.querySelectorAll("p"),
+        { opacity: 0, y: 30 },
         {
-          opacity: 0,
-          y: 30,
-          duration: 1,
+          opacity: 1,
+          y: 0,
+          duration: 1.5,
+          stagger: 0.3,
+          scrollTrigger: {
+            trigger: this.$refs.rightContainer,
+            start: "top 75%",
+            end: "bottom 25%",
+            markers: true,
+            toggleActions: "play reverse play reverse",
+          },
         }
       );
     },
@@ -78,6 +75,8 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.cdnfonts.com/css/maharlika");
+
 .firstComponent {
   display: flex;
   flex: 1;
@@ -87,7 +86,7 @@ export default {
   height: 100vh;
 }
 .leftContainer {
-  background-color: #8aaa97;
+  background-color: #95a192;
   flex: 0.5;
   display: flex;
   align-items: center;
@@ -106,22 +105,79 @@ export default {
   padding: 18px 90px;
   border: none;
   border-radius: 0px;
-  font-size: 1.2em;
+  font-size: 1.1em;
   cursor: pointer;
+  font-family: "Maharlika", sans-serif;
 }
 .shopButton:hover {
   background-color: #e0e0e0;
   transform: scale(1.05);
 }
 
-#bigWords {
-  font-size: 70px;
+.bigWords {
+  font-size: 65px;
   margin-bottom: 0;
   color: white;
+  font-family: "Maharlika", sans-serif;
 }
-#description {
-  font-size: 25px;
+.description {
+  font-size: 22px;
   margin-bottom: 19px;
   color: white;
+  font-family: "Maharlika", sans-serif;
+}
+
+@media (max-width: 1200px) {
+  .bigWords {
+    font-size: 60px;
+  }
+  .description {
+    font-size: 22px;
+  }
+  .shopButton {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 992px) {
+  .bigWords {
+    font-size: 50px;
+  }
+  .description {
+    font-size: 20px;
+  }
+  .shopButton {
+    font-size: 0.9em;
+    padding: 15px 75px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bigWords {
+    font-size: 40px;
+  }
+  .description {
+    font-size: 18px;
+  }
+  .shopButton {
+    font-size: 0.8em;
+    padding: 12px 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .firstComponent {
+    flex-direction: column;
+  }
+  .bigWords {
+    font-size: 30px;
+  }
+  .description {
+    font-size: 16px;
+  }
+  .shopButton {
+    font-size: 0.7em;
+    padding: 10px 50px;
+  }
 }
 </style>

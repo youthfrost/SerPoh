@@ -1,25 +1,25 @@
 <template>
-  <div class="fourthComponent">
-    <p id="bigWords">Contact Us</p>
+  <div class="theMissionComponent">
+    <p id="bigWords">The Mission</p>
   </div>
 </template>
 
 <script></script>
 <style scoped>
-.fourthComponent {
+.theMissionComponent {
   display: flex;
   flex: 1;
   padding: 0;
   margin: 0;
   flex-direction: row;
   height: 100vh;
-  background-color: #242825;
+  background-color: #ffffff;
   justify-content: center;
 }
 
 #bigWords {
   font-size: 50px;
-  color: #ffffff;
+  color: #6e8379;
 }
 
 .text-container {
