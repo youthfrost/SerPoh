@@ -1,9 +1,9 @@
 <template>
   <div class="secondComponent" ref="secondComponent">
-    <div class="leftContainer">
-      <p class="image">image</p>
+    <div class="leftContainer" ref="leftContainer">
+      <img src="@/assets/leaf.png" alt="Leaf" class="leafImage" />
     </div>
-    <div class="rightContainer">
+    <div class="rightContainer" ref="rightContainer">
       <div class="text-container">
         <div class="bigWords-container">
           <p class="bigWords">30 years of farming has instilled in us</p>
@@ -36,18 +36,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-  data() {
-    return {
-      animation: null,
-    };
-  },
   mounted() {
     this.playAnimation();
   },
   methods: {
     playAnimation() {
-      this.animation = gsap.fromTo(
-        this.$refs.secondComponent.querySelectorAll(".bigWords, .description"),
+      // Animation for the left container (leaf image)
+      gsap.fromTo(
+        this.$refs.leftContainer.querySelectorAll(".leafImage"),
         { opacity: 0, y: 30 },
         {
           opacity: 1,
@@ -55,9 +51,29 @@ export default {
           duration: 1.5,
           stagger: 0.3,
           scrollTrigger: {
-            trigger: this.$refs.secondComponent,
+            trigger: this.$refs.leftContainer,
             start: "top 80%",
             end: "bottom 20%",
+            markers: false,
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+
+      // Animation for the right container (text)
+      gsap.fromTo(
+        this.$refs.rightContainer.querySelectorAll(".bigWords, .description"),
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.5,
+          stagger: 0.3,
+          scrollTrigger: {
+            trigger: this.$refs.rightContainer,
+            start: "top 80%",
+            end: "bottom 20%",
+            markers: false,
             toggleActions: "play reverse play reverse",
           },
         }
@@ -69,6 +85,7 @@ export default {
 
 <style scoped>
 @import url("https://fonts.cdnfonts.com/css/maharlika");
+
 .secondComponent {
   display: flex;
   flex: 1;
@@ -80,11 +97,20 @@ export default {
 }
 .leftContainer {
   flex: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #e8e4e4;
+}
+.leafImage {
+  max-width: 80%;
+  height: 40%;
 }
 .rightContainer {
   flex: 0.5;
   display: flex;
+  align-items: center;
+  padding: 20px;
 }
 .text-container {
   font-size: 20px;
@@ -93,21 +119,18 @@ export default {
   flex-direction: column;
 }
 .bigWords-container {
-  flex: 0.4;
-  display: flex;
-  align-items: end;
+  margin-bottom: 20px;
 }
 .bigWords {
   margin: 0;
   font-size: 65px;
-  font-family: "Maharlika", sans-serif; /* Apply Maharlika font */
 }
 .description-container {
-  flex: 0.6;
+  flex: 1;
 }
 .description {
-  margin-bottom: 30px; /* Adjust line spacing here */
-  font-family: "Maharlika", sans-serif; /* Apply Maharlika font */
+  margin-bottom: 15px;
+  line-height: 1.5;
 }
 
 @media (max-width: 1200px) {
@@ -132,11 +155,16 @@ export default {
   .secondComponent {
     flex-direction: column;
   }
+  .leftContainer {
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+  }
   .rightContainer {
     align-items: center;
     text-align: center;
-    margin-left: 10%;
-    margin-right: 10%;
+    height: 50%;
+    margin: 0 10%;
   }
   .text-container {
     flex: 1;
@@ -151,10 +179,13 @@ export default {
 
 @media (max-width: 576px) {
   .bigWords {
-    font-size: 25px;
+    font-size: 30px;
   }
   .description {
-    font-size: 12px;
+    font-size: 15px;
+  }
+  .leafImage {
+    max-width: 60%;
   }
 }
 </style>

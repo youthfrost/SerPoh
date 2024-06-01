@@ -1,26 +1,28 @@
 <template>
-  <div class="whatWeDoComponent" ref="whatWeDoComponent">
+  <div class="didYouKnowComponent" ref="didYouKnowComponent">
     <div class="bigWords-container">
-      <p class="bigWords">What We Do</p>
+      <p class="bigWords">Did you know?</p>
     </div>
     <div class="contentContainer">
-      <div class="firstContainer">
-        <div class="imgContainer">
-          <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
-        </div>
-        <p class="description">Sustainable cultivation</p>
+      <div class="factContainer">
+        <hr />
+        <p class="description">
+          Beansprouts do not grow on cotton wool, not in soil nor in water.
+        </p>
       </div>
-      <div class="secondContainer">
-        <div class="imgContainer">
-          <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
-        </div>
-        <p class="description">Locally sourced goodness</p>
+      <div class="factContainer">
+        <hr />
+        <p class="description">
+          Beansprouts are rich in Vitamin C and antioxidants, boosting your
+          immune system naturally.
+        </p>
       </div>
-      <div class="thirdContainer">
-        <div class="imgContainer">
-          <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
-        </div>
-        <p class="description">Nourishing natural goodness</p>
+      <div class="factContainer">
+        <hr />
+        <p class="description">
+          Eating beansprouts can aid digestion due to their high fiber content,
+          promoting a healthy gut.
+        </p>
       </div>
     </div>
   </div>
@@ -39,7 +41,7 @@ export default {
   methods: {
     playAnimation() {
       gsap.fromTo(
-        this.$refs.whatWeDoComponent.querySelectorAll(".bigWords"),
+        this.$refs.didYouKnowComponent.querySelectorAll(".bigWords"),
         { opacity: 0, y: 50 },
         {
           opacity: 1,
@@ -47,7 +49,7 @@ export default {
           duration: 1.5,
           ease: "power2.out",
           scrollTrigger: {
-            trigger: this.$refs.whatWeDoComponent,
+            trigger: this.$refs.didYouKnowComponent,
             start: "top 80%",
             end: "bottom 20%",
             toggleActions: "play reverse play reverse",
@@ -56,8 +58,8 @@ export default {
       );
 
       gsap.fromTo(
-        this.$refs.whatWeDoComponent.querySelectorAll(
-          ".firstContainer, .secondContainer, .thirdContainer img, .description"
+        this.$refs.didYouKnowComponent.querySelectorAll(
+          ".factContainer hr, .description"
         ),
         { opacity: 0, y: 50 },
         {
@@ -67,7 +69,7 @@ export default {
           stagger: 0.2,
           ease: "power2.out",
           scrollTrigger: {
-            trigger: this.$refs.whatWeDoComponent,
+            trigger: this.$refs.didYouKnowComponent,
             start: "top 80%",
             end: "bottom 20%",
             toggleActions: "play reverse play reverse",
@@ -82,14 +84,15 @@ export default {
 <style scoped>
 @import url("https://fonts.cdnfonts.com/css/maharlika");
 
-.whatWeDoComponent {
+.didYouKnowComponent {
   display: flex;
   flex: 1;
   padding: 0;
   margin: 0;
   flex-direction: column;
   height: 100vh;
-  background-color: #ffe9eb;
+  background-color: #333333;
+  color: #ffffff;
   justify-content: center;
 }
 .bigWords-container {
@@ -99,10 +102,9 @@ export default {
   justify-content: center;
 }
 .bigWords {
-  justify-content: center;
   margin: 0;
   font-size: 50px;
-  color: #818b7e;
+  color: #ffffff;
 }
 .contentContainer {
   flex: 0.7;
@@ -110,22 +112,24 @@ export default {
   justify-content: space-around;
   padding: 0 10% 10% 10%;
 }
-
-.firstContainer,
-.secondContainer,
-.thirdContainer {
+.factContainer {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  flex: 0.2;
+  flex: 0.3;
+  text-align: center;
 }
-
 .description {
-  font-size: 25px;
-  color: #818b7e;
+  font-size: 20px;
+  color: #ffffff;
   margin-top: 10px;
   text-align: center;
+}
+hr {
+  width: 50px;
+  border: 1px solid #ffffff;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 1200px) {
@@ -133,7 +137,7 @@ export default {
     font-size: 45px;
   }
   .description {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -142,7 +146,7 @@ export default {
     font-size: 40px;
   }
   .description {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -151,33 +155,26 @@ export default {
     font-size: 35px;
   }
   .description {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 576px) {
+  .bigWords {
+    font-size: 30px;
+  }
+  .description {
+    font-size: 12px;
+  }
   .contentContainer {
     flex-direction: column;
     align-items: center;
   }
-
-  .firstContainer,
-  .secondContainer,
-  .thirdContainer {
-    width: 80%;
+  .factContainer {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-  }
-  .imgContainer {
-    flex: 0.5;
-    display: flex;
-    justify-content: center;
-  }
-  .description {
-    flex: 0.6;
-  }
-  .secondContainer {
-    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 </style>

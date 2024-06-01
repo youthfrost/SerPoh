@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="rightContainer" ref="rightContainer">
-      <p>video</p>
+      <p><img src="@/assets/leaf.png" alt="Leaf" class="leafImage" /></p>
     </div>
   </div>
 </template>
@@ -28,13 +28,12 @@ export default {
   },
   methods: {
     link() {
-      window.location.href =
-        "https://www.lazada.sg/products/redmart-bean-sprouts-300g-i2450071595-s14536348516.html?c=&channelLpJumpArgs=&clickTrackInfo=query%253Abeansprout%253Bnid%253A2450071595%253Bsrc%253ALazadaMainSrp%253Brn%253Af380071ced439985fd1a8dcbb778cb16%253Bregion%253Asg%253Bsku%253A2450071595_SGAMZ%253Bprice%253A1.15%253Bclient%253Adesktop%253Bsupplier_id%253A1000008313%253Bbiz_source%253Ah5_hp%253Bslot%253A1%253Butlog_bucket_id%253A470687%253Basc_category_id%253A10002571%253Bitem_id%253A2450071595%253Bsku_id%253A14536348516%253Bshop_id%253A99197&fastshipping=0&freeshipping=0&fs_ab=2&fuse_fs=&lang=en&location=Singapore&price=1.15&priceCompare=skuId%3A14536348516%3Bsource%3Alazada-search-voucher%3Bsn%3Af380071ced439985fd1a8dcbb778cb16%3BunionTrace%3Aa3b551a717161755035025647e%3BoriginPrice%3A115%3BvoucherPrice%3A115%3BdisplayPrice%3A115%3BsinglePromotionId%3A-1%3BsingleToolCode%3A-1%3BvoucherPricePlugin%3A1%3BbuyerId%3A0%3Btimestamp%3A1716175503889&ratingscore=4.856459330143541&request_id=f380071ced439985fd1a8dcbb778cb16&review=418&sale=17491&search=1&source=search&spm=a2o42.searchlist.list.1&stock=1";
+      this.$router.push({ name: "OurProducts" });
     },
     playAnimation() {
       gsap.fromTo(
         this.$refs.leftContainer.querySelectorAll(
-          ".bigWords, .description, .shopButton "
+          ".bigWords, .description, .shopButton"
         ),
         { opacity: 0, y: 30 },
         {
@@ -44,9 +43,9 @@ export default {
           stagger: 0.3,
           scrollTrigger: {
             trigger: this.$refs.leftContainer,
-            start: "top 75%",
-            end: "bottom 25%",
-            markers: true,
+            start: "top 80%",
+            end: "bottom 20%",
+            markers: false,
             toggleActions: "play reverse play reverse",
           },
         }
@@ -62,9 +61,9 @@ export default {
           stagger: 0.3,
           scrollTrigger: {
             trigger: this.$refs.rightContainer,
-            start: "top 75%",
-            end: "bottom 25%",
-            markers: true,
+            start: "top 80%",
+            end: "bottom 20%",
+            markers: false,
             toggleActions: "play reverse play reverse",
           },
         }
@@ -79,26 +78,36 @@ export default {
 
 .firstComponent {
   display: flex;
-  flex: 1;
-  padding: 0;
-  margin: 0;
   flex-direction: row;
   height: 100vh;
 }
+
 .leftContainer {
   background-color: #95a192;
   flex: 0.5;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
+
 .rightContainer {
   flex: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
+
 .container {
-  margin: auto;
-  flex: 0.5;
   text-align: center;
+  margin: 20%;
 }
+
+.leafImage {
+  height: 100%;
+  object-fit: cover;
+}
+
 .shopButton {
   background-color: #ffffff;
   color: rgb(0, 0, 0);
@@ -109,6 +118,7 @@ export default {
   cursor: pointer;
   font-family: "Maharlika", sans-serif;
 }
+
 .shopButton:hover {
   background-color: #e0e0e0;
   transform: scale(1.05);
@@ -118,13 +128,12 @@ export default {
   font-size: 65px;
   margin-bottom: 0;
   color: white;
-  font-family: "Maharlika", sans-serif;
 }
+
 .description {
   font-size: 22px;
   margin-bottom: 19px;
   color: white;
-  font-family: "Maharlika", sans-serif;
 }
 
 @media (max-width: 1200px) {
@@ -168,15 +177,24 @@ export default {
 @media (max-width: 576px) {
   .firstComponent {
     flex-direction: column;
+    height: 150vh;
   }
+  .leftContainer {
+    height: 100vh;
+    flex: 0.66;
+  }
+  .rightContainer {
+    flex: 0.33;
+  }
+
   .bigWords {
-    font-size: 30px;
+    font-size: 60px;
   }
   .description {
-    font-size: 16px;
+    font-size: 20px;
   }
   .shopButton {
-    font-size: 0.7em;
+    font-size: 1em;
     padding: 10px 50px;
   }
 }

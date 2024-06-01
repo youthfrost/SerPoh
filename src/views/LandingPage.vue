@@ -1,23 +1,30 @@
 <template>
-  <div class="pageDisplay">
-    <div class="component">
-      <FirstComponent :inView="currentComponent === 0" />
-    </div>
-    <div class="component">
-      <SecondComponent :inView="currentComponent === 1" />
-    </div>
-    <div class="component">
-      <ThirdComponent :inView="currentComponent === 2" />
-    </div>
-
-    <div class="component">
-      <WhatWeDoComponent :inView="currentComponent === 3" />
-    </div>
-    <div class="component">
-      <TheMissionComponent :inView="currentComponent === 4" />
-    </div>
-    <div class="component">
-      <ContactUsComponent :inView="currentComponent === 4" />
+  <div>
+    <NavBar
+      :isScrolling="isScrolling"
+      :whichComponent="whichComponent"
+      @update:isScrolling="isScrolling = $event"
+      @update:whichComponent="whichComponent = $event"
+    />
+    <div class="pageDisplay">
+      <div class="component" id="first">
+        <FirstComponent />
+      </div>
+      <div class="component" id="second">
+        <SecondComponent />
+      </div>
+      <div class="component" id="whatwedo">
+        <WhatWeDoComponent />
+      </div>
+      <div class="component" id="themission">
+        <TheMissionComponent />
+      </div>
+      <div class="component" id="didyouknow">
+        <DidYouKnowComponent />
+      </div>
+      <div class="component" id="contactus">
+        <ContactUsComponent />
+      </div>
     </div>
   </div>
 </template>
@@ -25,42 +32,50 @@
 <script>
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import NavBar from "@/components/NavBar.vue";
 import FirstComponent from "@/components/FirstComponent.vue";
 import SecondComponent from "@/components/SecondComponent.vue";
-import ThirdComponent from "@/components/ThirdComponent.vue";
 import ContactUsComponent from "@/components/ContactUsComponent.vue";
 import WhatWeDoComponent from "@/components/WhatWeDoComponent.vue";
 import TheMissionComponent from "@/components/TheMissionComponent.vue";
+import DidYouKnowComponent from "@/components/DidYouKnowComponent.vue";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
   components: {
+    NavBar,
     FirstComponent,
     SecondComponent,
-    ThirdComponent,
+
     ContactUsComponent,
     WhatWeDoComponent,
     TheMissionComponent,
+    DidYouKnowComponent,
   },
   data() {
     return {
-      currentComponent: 0,
+      isMobile: false,
+      whichComponent: 0,
+      isScrolling: false,
     };
   },
   mounted() {
+    this.checkMobile();
+    window.addEventListener("resize", this.checkMobile);
     this.initScrollTrigger();
-    window.addEventListener("scroll", this.updateCurrentComponent);
   },
-  destroyed() {
-    window.removeEventListener("scroll", this.updateCurrentComponent);
+  beforeDestroy() {
+    window.removeEventListener("resize", this.checkMobile);
   },
   methods: {
+    checkMobile() {
+      this.isMobile = window.innerWidth <= 768;
+    },
     initScrollTrigger() {
-      if (window.innerWidth > 768) {
-        // Adjust the threshold as needed
-        let component = Array.from(document.querySelectorAll(".component"));
-        let tops = component.map((component, index) =>
+      if (!this.isMobile) {
+        let components = Array.from(document.querySelectorAll(".component"));
+        let tops = components.map((component, index) =>
           ScrollTrigger.create({
             id: `component_${index}`,
             trigger: component,
@@ -86,49 +101,53 @@ export default {
                   self.end,
                   snapScroll
                 );
+
               return normalizedValue;
             },
             duration: 0.5,
             ease: "power1.out",
           },
+          onUpdate: () => {
+            this.isScrolling = true;
+
+            clearTimeout(this.scrollTimeout); // Clear previous timeout
+            this.scrollTimeout = setTimeout(() => {
+              this.isScrolling = false;
+            }, 500);
+          },
+          onSnapComplete: (self) => {
+            let componentStarts = tops.map((st) => st.start),
+              snapScroll = gsap.utils.snap(componentStarts, self.scroll());
+            let activeComponentIndex = componentStarts.findIndex(
+              (start) => start === snapScroll
+            );
+            this.whichComponent = activeComponentIndex;
+            this.isScrolling = false;
+          },
         });
       }
-    },
-    updateCurrentComponent() {
-      const windowHeight = window.innerHeight;
-      const scrollPosition = window.scrollY;
-      const components = document.querySelectorAll(".component");
-
-      // Iterate through each component to find which one is more than 50% visible on the screen
-      for (let i = 0; i < components.length; i++) {
-        const component = components[i];
-        const componentTop = component.offsetTop;
-        const componentBottom = componentTop + component.offsetHeight;
-
-        // Check if the component is more than 50% visible
-        if (
-          componentTop < scrollPosition + windowHeight / 2 &&
-          componentBottom > scrollPosition + windowHeight / 2
-        ) {
-          // Update currentComponent if it's different from the index of the component
-          if (this.currentComponent !== i) {
-            this.currentComponent = i;
-          }
-          break; // Break the loop once we find the component in view
-        }
-      }
-      console.log(this.currentComponent);
     },
   },
 };
 </script>
 
 <style scoped>
+@import url("https://fonts.cdnfonts.com/css/maharlika");
+
 .pageDisplay {
   margin: 0;
   padding: 0;
+  font-family: "Maharlika", sans-serif;
+  /* Ensure the content does not overlap the navbar */
 }
+
 .component {
   height: 100vh; /* Full viewport height */
+}
+
+@media (max-width: 576px) {
+  .component {
+    height: auto; /* Change height to auto on mobile */
+  }
 }
 </style>
