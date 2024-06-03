@@ -157,6 +157,25 @@ hr {
   .description {
     font-size: 14px;
   }
+
+  .contentContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .factContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .description,
+  hr {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (max-width: 576px) {
@@ -165,16 +184,6 @@ hr {
   }
   .description {
     font-size: 12px;
-  }
-  .contentContainer {
-    flex-direction: column;
-    align-items: center;
-  }
-  .factContainer {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 }
 </style>

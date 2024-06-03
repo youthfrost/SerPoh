@@ -3,29 +3,48 @@
     <nav class="nav">
       <ul>
         <li>
-          <!-- Change Home button to navigate to the landing page -->
           <button
+            class="nav-button"
             :style="{ color: textColor }"
             @click="navigateTo('landing', 0)"
+            @mouseenter="animateUnderline($event, true)"
+            @mouseleave="animateUnderline($event, false)"
           >
             Home
+            <span
+              class="underline"
+              :style="{ backgroundColor: textColor }"
+            ></span>
           </button>
         </li>
         <li>
-          <!-- Change Shop button to navigate to the OurProducts page -->
           <button
+            class="nav-button"
             :style="{ color: textColor }"
             @click="navigateTo('ourproducts', 1)"
+            @mouseenter="animateUnderline($event, true)"
+            @mouseleave="animateUnderline($event, false)"
           >
             Shop
+            <span
+              class="underline"
+              :style="{ backgroundColor: textColor }"
+            ></span>
           </button>
         </li>
         <li>
           <button
+            class="nav-button"
             :style="{ color: textColor }"
             @click="navigateTo('contactus', 6)"
+            @mouseenter="animateUnderline($event, true)"
+            @mouseleave="animateUnderline($event, false)"
           >
             Contact Us
+            <span
+              class="underline"
+              :style="{ backgroundColor: textColor }"
+            ></span>
           </button>
         </li>
       </ul>
@@ -34,6 +53,8 @@
 </template>
 
 <script>
+import gsap from "gsap";
+
 export default {
   name: "NavBar",
   props: {
@@ -61,7 +82,7 @@ export default {
         case 3:
           return "#818b7e";
         case 4:
-          return "#818b7e";
+          return "white";
         default:
           return "white"; // Default color
       }
@@ -73,8 +94,9 @@ export default {
       switch (sectionId) {
         case "landing":
           if (this.$route.path === "/") {
-            // If already in landing page, scroll to the top
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            setTimeout(() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }, 500);
           } else {
             // Route to the landing page
             this.$router.push("/");
@@ -94,9 +116,28 @@ export default {
           break;
       }
     },
+    animateUnderline(event, isEntering) {
+      const underline = event.currentTarget.querySelector(".underline");
+      if (isEntering) {
+        gsap.to(underline, {
+          duration: 0.3,
+          scaleX: 1,
+          transformOrigin: "left",
+          opacity: 1,
+        });
+      } else {
+        gsap.to(underline, {
+          duration: 0.3,
+          scaleX: 0,
+          transformOrigin: "right",
+          opacity: 0,
+        });
+      }
+    },
   },
 };
 </script>
+
 <style scoped>
 @import url("https://fonts.cdnfonts.com/css/maharlika");
 
@@ -118,7 +159,7 @@ export default {
 
 nav {
   display: flex;
-  flex: 0.3;
+  flex: 0.5;
 }
 
 ul {
@@ -143,9 +184,22 @@ button {
   color: white;
   transition: color 0.3s ease;
   cursor: pointer;
+  position: relative; /* Relative positioning for the button */
 }
 
-button:focus {
-  outline: none;
+.nav-button {
+  position: relative;
+  overflow: hidden; /* Add overflow hidden to hide the part of the underline that goes outside the button */
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px; /* Height of the underline */
+  width: 100%;
+  opacity: 0; /* Initially hidden */
+  transform: scaleX(0); /* Initially scaled to 0 width */
+  transform-origin: left; /* Set the transform origin to the left edge */
 }
 </style>

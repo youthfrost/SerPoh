@@ -58,6 +58,7 @@ export default {
       isMobile: false,
       whichComponent: 0,
       isScrolling: false,
+      shouldSnapBoolean: false,
     };
   },
   mounted() {
@@ -94,38 +95,75 @@ export default {
           markers: false,
           snap: {
             snapTo: (progress, self) => {
-              let componentStarts = tops.map((st) => st.start),
-                snapScroll = gsap.utils.snap(componentStarts, self.scroll()),
-                normalizedValue = gsap.utils.normalize(
+              let componentStarts = tops.map((st) => st.start);
+
+              if (!this.shouldSnap(progress, self, componentStarts)) {
+                this.shouldSnapBoolean = false;
+                return gsap.utils.normalize(
                   self.start,
                   self.end,
-                  snapScroll
+                  self.scroll()
                 );
-
+              }
+              this.shouldSnapBoolean = true;
+              let snapScroll = gsap.utils.snap(componentStarts, self.scroll());
+              let normalizedValue = gsap.utils.normalize(
+                self.start,
+                self.end,
+                snapScroll
+              );
               return normalizedValue;
             },
             duration: 0.5,
             ease: "power1.out",
           },
+
           onUpdate: () => {
             this.isScrolling = true;
-
             clearTimeout(this.scrollTimeout); // Clear previous timeout
             this.scrollTimeout = setTimeout(() => {
               this.isScrolling = false;
             }, 500);
           },
           onSnapComplete: (self) => {
-            let componentStarts = tops.map((st) => st.start),
-              snapScroll = gsap.utils.snap(componentStarts, self.scroll());
-            let activeComponentIndex = componentStarts.findIndex(
-              (start) => start === snapScroll
-            );
-            this.whichComponent = activeComponentIndex;
-            this.isScrolling = false;
+            if (this.shouldSnapBoolean) {
+              console.log("onSnap");
+              let componentStarts = tops.map((st) => st.start),
+                snapScroll = gsap.utils.snap(componentStarts, self.scroll());
+              let activeComponentIndex = componentStarts.findIndex(
+                (start) => start === snapScroll
+              );
+              this.whichComponent = activeComponentIndex;
+              this.isScrolling = false;
+              console.log(this.whichComponent);
+            }
           },
         });
       }
+    },
+    shouldSnap(progress, self, componentStarts) {
+      const nearestComponents = [null, null]; // Initialize array to store nearest component start positions
+      // Find the nearest components
+      componentStarts.forEach((start, index) => {
+        if (start <= self.scroll()) {
+          if (!nearestComponents[0] || nearestComponents[0] < start) {
+            nearestComponents[0] = start;
+          }
+        } else {
+          if (!nearestComponents[1] || nearestComponents[1] > start) {
+            nearestComponents[1] = start;
+          }
+        }
+      });
+      const thresholdLow =
+        nearestComponents[0] +
+        (nearestComponents[1] - nearestComponents[0]) * 0.5;
+      const thresholdHigh =
+        nearestComponents[0] +
+        (nearestComponents[1] - nearestComponents[0]) * 0.5;
+
+      // Check if self.scroll is within the threshold range
+      return self.scroll() < thresholdLow || self.scroll() > thresholdHigh;
     },
   },
 };
@@ -138,6 +176,7 @@ export default {
   margin: 0;
   padding: 0;
   font-family: "Maharlika", sans-serif;
+  margin-top: 3px;
   /* Ensure the content does not overlap the navbar */
 }
 
