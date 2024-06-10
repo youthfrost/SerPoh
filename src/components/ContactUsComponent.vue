@@ -8,6 +8,7 @@
 <style scoped>
 .contactUsComponent {
   display: flex;
+
   flex: 1;
   padding: 0;
   margin: 0;

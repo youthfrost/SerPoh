@@ -47,7 +47,6 @@ export default {
     NavBar,
     FirstComponent,
     SecondComponent,
-
     ContactUsComponent,
     WhatWeDoComponent,
     TheMissionComponent,
@@ -59,6 +58,7 @@ export default {
       whichComponent: 0,
       isScrolling: false,
       shouldSnapBoolean: false,
+      tops: [], // Array to store component start positions
     };
   },
   mounted() {
@@ -66,8 +66,9 @@ export default {
     window.addEventListener("resize", this.checkMobile);
     this.initScrollTrigger();
   },
-  beforeDestroy() {
+  unmounted() {
     window.removeEventListener("resize", this.checkMobile);
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
   },
   methods: {
     checkMobile() {
@@ -76,14 +77,12 @@ export default {
     initScrollTrigger() {
       if (!this.isMobile) {
         let components = Array.from(document.querySelectorAll(".component"));
-        let tops = components.map((component, index) =>
-          ScrollTrigger.create({
-            id: `component_${index}`,
-            trigger: component,
-            markers: false,
-            start: "top top",
-          })
+        this.tops = components.map(
+          (component, index) =>
+            component.getBoundingClientRect().top + window.scrollY
         );
+
+        // Add the bottom of the last component to the tops array
 
         let container = document.querySelector(".pageDisplay");
 
@@ -91,13 +90,10 @@ export default {
           id: "snapper",
           trigger: container,
           start: "top bottom",
-          end: "bottom bottom",
-          markers: false,
+          markers: true,
           snap: {
             snapTo: (progress, self) => {
-              let componentStarts = tops.map((st) => st.start);
-
-              if (!this.shouldSnap(progress, self, componentStarts)) {
+              if (!this.shouldSnap(progress, self)) {
                 this.shouldSnapBoolean = false;
                 return gsap.utils.normalize(
                   self.start,
@@ -106,12 +102,13 @@ export default {
                 );
               }
               this.shouldSnapBoolean = true;
-              let snapScroll = gsap.utils.snap(componentStarts, self.scroll());
+              let snapScroll = gsap.utils.snap(this.tops, self.scroll());
               let normalizedValue = gsap.utils.normalize(
                 self.start,
                 self.end,
                 snapScroll
               );
+
               return normalizedValue;
             },
             duration: 0.5,
@@ -127,10 +124,8 @@ export default {
           },
           onSnapComplete: (self) => {
             if (this.shouldSnapBoolean) {
-              console.log("onSnap");
-              let componentStarts = tops.map((st) => st.start),
-                snapScroll = gsap.utils.snap(componentStarts, self.scroll());
-              let activeComponentIndex = componentStarts.findIndex(
+              let snapScroll = gsap.utils.snap(this.tops, self.scroll());
+              let activeComponentIndex = this.tops.findIndex(
                 (start) => start === snapScroll
               );
               this.whichComponent = activeComponentIndex;
@@ -141,10 +136,11 @@ export default {
         });
       }
     },
-    shouldSnap(progress, self, componentStarts) {
+
+    shouldSnap(progress, self) {
       const nearestComponents = [null, null]; // Initialize array to store nearest component start positions
       // Find the nearest components
-      componentStarts.forEach((start, index) => {
+      this.tops.forEach((start) => {
         if (start <= self.scroll()) {
           if (!nearestComponents[0] || nearestComponents[0] < start) {
             nearestComponents[0] = start;
@@ -162,7 +158,6 @@ export default {
         nearestComponents[0] +
         (nearestComponents[1] - nearestComponents[0]) * 0.5;
 
-      // Check if self.scroll is within the threshold range
       return self.scroll() < thresholdLow || self.scroll() > thresholdHigh;
     },
   },
@@ -176,7 +171,8 @@ export default {
   margin: 0;
   padding: 0;
   font-family: "Maharlika", sans-serif;
-  margin-top: 3px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   /* Ensure the content does not overlap the navbar */
 }
 
@@ -185,6 +181,10 @@ export default {
 }
 
 @media (max-width: 576px) {
+  .pageDisplay {
+    margin: 0;
+    padding: 0;
+  }
   .component {
     height: auto; /* Change height to auto on mobile */
   }

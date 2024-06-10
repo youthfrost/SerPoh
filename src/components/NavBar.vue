@@ -108,9 +108,11 @@ export default {
         case "ourproducts":
           // Route to the OurProducts page
           this.$router.push("/OurProducts");
+          window.scrollTo({ top: 0, behavior: "smooth" });
           break;
         case "contactus":
-          // Do something else for the Contact Us button if needed
+          this.$router.push("/ContactUs"); // Do something else for the Contact Us button if needed
+          window.scrollTo({ top: 0, behavior: "smooth" });
           break;
         default:
           break;
@@ -146,11 +148,12 @@ export default {
   top: 0;
   width: 100%;
   background: transparent; /* Slightly transparent background */
-  z-index: 1000;
+  z-index: 1001;
   display: flex;
   height: 50px;
   align-items: center;
   transition: background-color 0.3s ease;
+  pointer-events: auto;
 }
 
 .navbar.scrolling {
@@ -159,7 +162,7 @@ export default {
 
 nav {
   display: flex;
-  flex: 0.5;
+  flex: 0.25;
 }
 
 ul {

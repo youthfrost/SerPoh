@@ -25,12 +25,21 @@
         </p>
       </div>
     </div>
+
+    <!-- Contact Us Horizontal Bar -->
+    <div class="contact-bar">
+      <hr class="horizontal-line" />
+      <button @click="redirectToContactUs" class="contact-button">
+        Contact Us Now!!!
+      </button>
+    </div>
   </div>
 </template>
 
 <script>
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRouter } from "vue-router";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,13 +86,15 @@ export default {
         }
       );
     },
+    redirectToContactUs() {
+      this.$router.push("/ContactUs"); // Do something else for the Contact Us button if needed
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
   },
 };
 </script>
 
 <style scoped>
-@import url("https://fonts.cdnfonts.com/css/maharlika");
-
 .didYouKnowComponent {
   display: flex;
   flex: 1;
@@ -107,7 +118,7 @@ export default {
   color: #ffffff;
 }
 .contentContainer {
-  flex: 0.7;
+  flex: 0.6;
   display: flex;
   justify-content: space-around;
   padding: 0 10% 10% 10%;
@@ -130,6 +141,33 @@ hr {
   width: 50px;
   border: 1px solid #ffffff;
   margin-bottom: 10px;
+}
+
+.contact-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0.2;
+}
+
+.horizontal-line {
+  width: 100%;
+  border: 1px solid #ffffff;
+}
+
+.contact-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #333333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #cccccc;
 }
 
 @media (max-width: 1200px) {

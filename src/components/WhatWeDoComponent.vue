@@ -4,25 +4,67 @@
       <p class="bigWords">What We Do</p>
     </div>
     <div class="contentContainer">
-      <div class="firstContainer">
+      <div
+        class="firstContainer"
+        ref="container1"
+        @mouseover="showModal(0)"
+        @mouseleave="hideModal(0)"
+      >
         <div class="imgContainer">
           <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
         </div>
         <p class="description">Sustainable cultivation</p>
       </div>
-      <div class="secondContainer">
+      <div
+        class="secondContainer"
+        ref="container2"
+        @mouseover="showModal(1)"
+        @mouseleave="hideModal(1)"
+      >
         <div class="imgContainer">
           <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
         </div>
         <p class="description">Locally sourced goodness</p>
       </div>
-      <div class="thirdContainer">
+      <div
+        class="thirdContainer"
+        ref="container3"
+        @mouseover="showModal(2)"
+        @mouseleave="hideModal(2)"
+      >
         <div class="imgContainer">
           <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
         </div>
         <p class="description">Nourishing natural goodness</p>
       </div>
     </div>
+    <transition name="modal-fade">
+      <div
+        v-show="showModals[0]"
+        class="modal"
+        :style="{ top: modalPosition[0] }"
+      >
+        Modal Content 1
+      </div>
+    </transition>
+    <transition name="modal-fade">
+      <div
+        v-show="showModals[1]"
+        class="modal"
+        :style="{ top: modalPosition[1] }"
+      >
+        Modal Content 2
+      </div>
+    </transition>
+    <transition name="modal-fade">
+      <div
+        v-show="showModals[2]"
+        class="modal"
+        :style="{ top: modalPosition[2] }"
+      >
+        Modal Content 3
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -33,6 +75,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
+  data() {
+    return {
+      showModals: [false, false, false],
+      modalPosition: ["auto", "auto", "auto"],
+    };
+  },
   mounted() {
     this.playAnimation();
   },
@@ -75,6 +123,20 @@ export default {
         }
       );
     },
+    showModal(index) {
+      this.showModals.splice(index, 1, true);
+      this.setModalPosition(index);
+    },
+    hideModal(index) {
+      this.showModals.splice(index, 1, false);
+    },
+    setModalPosition(index) {
+      const container = this.$refs[`container${index + 1}`];
+      if (container) {
+        const containerTop = container.getBoundingClientRect().bottom;
+        this.$set(this.modalPosition, index, `${containerTop}px`);
+      }
+    },
   },
 };
 </script>
@@ -109,6 +171,7 @@ export default {
   display: flex;
   justify-content: space-around;
   padding: 0 10% 10% 10%;
+  align-items: center;
 }
 
 .firstContainer,
@@ -118,7 +181,8 @@ export default {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  flex: 0.2;
+  height: 100px;
+  cursor: pointer;
 }
 
 .description {
@@ -126,6 +190,31 @@ export default {
   color: #818b7e;
   margin-top: 10px;
   text-align: center;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  width: 100px;
+}
+
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.modal-fade-enter, .modal-fade-leave-to /* .modal-fade-leave-active in <2.1.8 */ {
+  opacity: 0;
 }
 
 @media (max-width: 1200px) {
