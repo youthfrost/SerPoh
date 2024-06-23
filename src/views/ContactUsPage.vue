@@ -2,6 +2,15 @@
   <div class="contact-us">
     <NavBar :isScrolling="isScrolling" :whichComponent="whichComponent" />
     <div class="contact-info" ref="contactInfo">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10960.379072649743!2d103.72753725042381!3d1.3997609386678358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da0f001c03d241%3A0xf686aacccb3e37da!2sSer%20Poh%20Farming%20and%20Trading%20Enterprise%20Pte%20Ltd!5e0!3m2!1sen!2ssg!4v1719127612106!5m2!1sen!2ssg"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
       <div class="contact-item">
         <img :src="BeanSproutImage" alt="Chat Icon" class="icon" />
         <p>Chat with us<br />6:00 - 00:00<br />7 days a week</p>

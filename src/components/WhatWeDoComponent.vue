@@ -14,6 +14,9 @@
           <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
         </div>
         <p class="description">Sustainable cultivation</p>
+        <transition name="modal-fade">
+          <div v-show="showModals[0]" class="modal">Modal Content 1</div>
+        </transition>
       </div>
       <div
         class="secondContainer"
@@ -25,6 +28,9 @@
           <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
         </div>
         <p class="description">Locally sourced goodness</p>
+        <transition name="modal-fade">
+          <div v-show="showModals[1]" class="modal">Modal Content 2</div>
+        </transition>
       </div>
       <div
         class="thirdContainer"
@@ -36,35 +42,11 @@
           <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
         </div>
         <p class="description">Nourishing natural goodness</p>
+        <transition name="modal-fade">
+          <div v-show="showModals[2]" class="modal">Modal Content 3</div>
+        </transition>
       </div>
     </div>
-    <transition name="modal-fade">
-      <div
-        v-show="showModals[0]"
-        class="modal"
-        :style="{ top: modalPosition[0] }"
-      >
-        Modal Content 1
-      </div>
-    </transition>
-    <transition name="modal-fade">
-      <div
-        v-show="showModals[1]"
-        class="modal"
-        :style="{ top: modalPosition[1] }"
-      >
-        Modal Content 2
-      </div>
-    </transition>
-    <transition name="modal-fade">
-      <div
-        v-show="showModals[2]"
-        class="modal"
-        :style="{ top: modalPosition[2] }"
-      >
-        Modal Content 3
-      </div>
-    </transition>
   </div>
 </template>
 
@@ -78,7 +60,6 @@ export default {
   data() {
     return {
       showModals: [false, false, false],
-      modalPosition: ["auto", "auto", "auto"],
     };
   },
   mounted() {
@@ -125,17 +106,9 @@ export default {
     },
     showModal(index) {
       this.showModals.splice(index, 1, true);
-      this.setModalPosition(index);
     },
     hideModal(index) {
       this.showModals.splice(index, 1, false);
-    },
-    setModalPosition(index) {
-      const container = this.$refs[`container${index + 1}`];
-      if (container) {
-        const containerTop = container.getBoundingClientRect().bottom;
-        this.$set(this.modalPosition, index, `${containerTop}px`);
-      }
     },
   },
 };
@@ -183,6 +156,11 @@ export default {
   justify-content: center;
   height: 100px;
   cursor: pointer;
+  position: relative; /* Added to ensure the modal positions correctly */
+}
+
+.imgContainer {
+  position: relative;
 }
 
 .description {
@@ -196,8 +174,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  bottom: 20px;
+  position: absolute;
+  bottom: -60px; /* Adjust this value to position the modal below the text */
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(255, 255, 255, 0.8);

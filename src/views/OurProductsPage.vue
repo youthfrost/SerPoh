@@ -1,10 +1,17 @@
 <template>
   <div>
     <NavBar :isScrolling="isScrolling" :whichComponent="whichComponent" />
-    <div class="thirdComponent">
+    <div class="ourProducts">
       <div class="content">
         <h1 id="bigWords">Let's eat Tauge Tau-gether!</h1>
         <div class="product-tabs">
+          <button
+            class="tab"
+            :class="{ active: activeTab === 'all' }"
+            @click="activeTab = 'all'"
+          >
+            All Products
+          </button>
           <button
             class="tab"
             :class="{ active: activeTab === 'bean' }"
@@ -39,6 +46,7 @@ import NavBar from "@/components/NavBar.vue";
 import OurProductsBeanSprout from "@/components/OurProductsBeanSprout.vue";
 import OurProductsSoyBeanSprout from "@/components/OurProductsSoyBeanSprout.vue";
 import OurProductsOtherProducts from "@/components/OurProductsOtherProducts.vue";
+import OurProductsAll from "@/components/OurProductsAll.vue"; // Import the new component
 
 export default {
   components: {
@@ -46,12 +54,13 @@ export default {
     OurProductsBeanSprout,
     OurProductsSoyBeanSprout,
     OurProductsOtherProducts,
+    OurProductsAll, // Register the new component
   },
   data() {
     return {
       isScrolling: false,
       whichComponent: 2,
-      activeTab: "bean",
+      activeTab: "all", // Default to "all" to show the new component
     };
   },
   computed: {
@@ -61,8 +70,11 @@ export default {
           return "OurProductsSoyBeanSprout";
         case "other":
           return "OurProductsOtherProducts";
-        default:
+        case "bean":
           return "OurProductsBeanSprout";
+        case "all":
+        default:
+          return "OurProductsAll"; // Default to the new component
       }
     },
   },
@@ -92,13 +104,13 @@ export default {
 <style scoped>
 @import url("https://fonts.cdnfonts.com/css/maharlika");
 
-.thirdComponent {
+.ourProducts {
   display: flex;
   flex: 1;
   padding: 0;
   margin: 0;
   flex-direction: column;
-
+  height: 100vh;
   background-color: #f5f5f5;
   justify-content: flex-start;
   align-items: center;

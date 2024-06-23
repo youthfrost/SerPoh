@@ -2,15 +2,8 @@
   <div class="products">
     <div class="product" v-for="(product, index) in products" :key="index">
       <img :src="product.image" :alt="product.name" class="product-image" />
-      <p>{{ product.weight }}g {{ product.name }}</p>
-    </div>
-    <div class="product-description">
-      <p>
-        Explore our range of other products, each offering unique flavors and
-        nutritional benefits. From vacuum-packed vegetables to innovative
-        plant-based products, each item is carefully selected to provide you
-        with a healthy and delicious eating experience.
-      </p>
+      <p v-if="product.weight">{{ product.weight }}g {{ product.name }}</p>
+      <p v-else>{{ product.name }}</p>
     </div>
   </div>
 </template>
@@ -23,9 +16,8 @@ export default {
   data() {
     return {
       products: [
-        { name: "Other Product", weight: 200, image: OtherProductImage },
-        { name: "Other Product", weight: 300, image: OtherProductImage },
-        { name: "Other Product", weight: 300, image: OtherProductImage },
+        { name: "Bean Sprout Husk", weight: 200, image: OtherProductImage },
+        { name: "Bean Sprout pen", image: OtherProductImage }, // No weight provided
       ],
     };
   },
@@ -35,13 +27,6 @@ export default {
   methods: {
     animateContent() {
       gsap.from(".product", { duration: 1, y: 50, opacity: 0, stagger: 0.2 });
-      gsap.from(".product-description p", {
-        duration: 1,
-        x: -50,
-        opacity: 0,
-        ease: "power1",
-        delay: 0.5,
-      });
     },
   },
 };
@@ -74,11 +59,8 @@ export default {
   margin-bottom: 10px;
 }
 
-.product-description {
-  max-width: 800px;
-  margin: 40px auto;
+.product p {
   font-size: 18px;
   color: #333;
-  padding: 0 20px;
 }
 </style>

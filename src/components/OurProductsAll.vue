@@ -17,8 +17,7 @@ export default {
       products: [
         { name: "Bean Sprout", weight: 200, image: BeanSproutImage },
         { name: "Bean Sprout", weight: 300, image: BeanSproutImage },
-        { name: "Bean Sprout", weight: 500, image: BeanSproutImage },
-        { name: "Bean Sprout", weight: 1000, image: BeanSproutImage },
+        { name: "Bean Sprout", weight: 300, image: BeanSproutImage },
       ],
     };
   },
@@ -28,6 +27,13 @@ export default {
   methods: {
     animateContent() {
       gsap.from(".product", { duration: 1, y: 50, opacity: 0, stagger: 0.2 });
+      gsap.from(".product-description", {
+        duration: 1,
+        x: -50,
+        opacity: 0,
+        ease: "power1",
+        delay: 0.5,
+      });
     },
   },
 };
@@ -37,17 +43,11 @@ export default {
 @import url("https://fonts.cdnfonts.com/css/maharlika");
 
 .products {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
   margin-top: 20px;
-}
-
-@media (max-width: 1200px) {
-  .products {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 .product {
@@ -56,17 +56,48 @@ export default {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  width: 200px;
 }
 
 .product-image {
-  width: 200px; /* Adjust the width as needed */
+  width: 100%;
   height: auto;
   border-radius: 10px;
   margin-bottom: 10px;
 }
 
-.product p {
+.product-description {
+  max-width: 800px;
+  margin: 40px auto;
   font-size: 18px;
   color: #333;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.description-section {
+  margin-bottom: 20px;
+}
+
+.description-section h3 {
+  color: #6e8379;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.description-section p,
+.description-section ul {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.description-section ul {
+  padding-left: 20px;
+}
+
+.description-section ul li {
+  margin-bottom: 10px;
 }
 </style>

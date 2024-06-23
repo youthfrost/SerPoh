@@ -4,16 +4,6 @@
       <img :src="product.image" :alt="product.name" class="product-image" />
       <p>{{ product.weight }}g {{ product.name }}</p>
     </div>
-    <div class="product-description">
-      <p>
-        Our vacuum-packed soybean sprouts offer a fresh, crisp, and nutritious
-        addition to your meals. Grown from high-quality soybeans, these sprouts
-        are meticulously harvested at their peak to ensure maximum flavor and
-        crunch. The vacuum packing process locks in freshness, extending shelf
-        life and preserving the natural taste and texture without the need for
-        preservatives.
-      </p>
-    </div>
   </div>
 </template>
 
@@ -26,8 +16,6 @@ export default {
     return {
       products: [
         { name: "Soy Bean Sprout", weight: 200, image: SoyBeanSproutImage },
-        { name: "Soy Bean Sprout", weight: 300, image: SoyBeanSproutImage },
-        { name: "Soy Bean Sprout", weight: 300, image: SoyBeanSproutImage },
       ],
     };
   },
@@ -37,13 +25,6 @@ export default {
   methods: {
     animateContent() {
       gsap.from(".product", { duration: 1, y: 50, opacity: 0, stagger: 0.2 });
-      gsap.from(".product-description p", {
-        duration: 1,
-        x: -50,
-        opacity: 0,
-        ease: "power1",
-        delay: 0.5,
-      });
     },
   },
 };
@@ -76,11 +57,8 @@ export default {
   margin-bottom: 10px;
 }
 
-.product-description {
-  max-width: 800px;
-  margin: 40px auto;
+.product p {
   font-size: 18px;
   color: #333;
-  padding: 0 20px;
 }
 </style>
