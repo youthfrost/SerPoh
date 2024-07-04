@@ -110,12 +110,13 @@ export default {
   padding: 0;
   margin: 0;
   flex-direction: column;
-  height: 100vh;
+
   background-color: #f5f5f5;
   justify-content: flex-start;
   align-items: center;
   text-align: center;
   padding-top: 50px;
+  padding-bottom: 100px;
   z-index: 1000;
   pointer-events: auto;
 }

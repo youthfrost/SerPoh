@@ -26,12 +26,28 @@
       </div>
     </div>
 
-    <!-- Contact Us Horizontal Bar -->
+    <!-- Contact Us and Social Media Section -->
     <div class="contact-bar">
       <hr class="horizontal-line" />
-      <button @click="redirectToContactUs" class="contact-button">
-        Contact Us Now!!!
-      </button>
+      <div class="contact-social-container">
+        <button @click="redirectToContactUs" class="contact-button">
+          Contact Us Now!!!
+        </button>
+        <div class="social-container">
+          <p class="follow-us">Follow us on social media</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -87,7 +103,7 @@ export default {
       );
     },
     redirectToContactUs() {
-      this.$router.push("/ContactUs"); // Do something else for the Contact Us button if needed
+      this.$router.push("/ContactUs");
       window.scrollTo({ top: 0, behavior: "smooth" });
     },
   },
@@ -95,6 +111,8 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+
 .didYouKnowComponent {
   display: flex;
   flex: 1;
@@ -102,7 +120,7 @@ export default {
   margin: 0;
   flex-direction: column;
   height: 100vh;
-  background-color: #333333;
+  background: linear-gradient(135deg, #333333, #111111);
   color: #ffffff;
   justify-content: center;
 }
@@ -116,6 +134,7 @@ export default {
   margin: 0;
   font-size: 50px;
   color: #ffffff;
+  text-shadow: 2px 2px 4px #000000;
 }
 .contentContainer {
   flex: 0.6;
@@ -147,27 +166,64 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 0.2;
+  padding: 20px 0;
 }
 
 .horizontal-line {
-  width: 100%;
+  width: 80%;
   border: 1px solid #ffffff;
 }
 
+.contact-social-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .contact-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #ffffff;
+  padding: 10px 30px;
+  background-color: #66ef76;
   color: #333333;
+  /* 
+  background-color: #6e8379;
+  color: #f2f2f2;*/
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .contact-button:hover {
-  background-color: #cccccc;
+  background-color: #ffaa00;
+  transform: scale(1.05);
+}
+
+.social-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.follow-us {
+  font-size: 18px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #cccccc;
 }
 
 @media (max-width: 1200px) {
@@ -223,5 +279,34 @@ hr {
   .description {
     font-size: 12px;
   }
+
+  .contact-social-container {
+    flex-direction: column;
+  }
+
+  .social-container {
+    align-items: flex-start;
+  }
 }
+
+/* Previous Design
+
+
+
+
+.contact-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ff7f50;
+  color: #333333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #ff6347;
+}
+*/
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar
-      :isScrolling="isScrolling"
+      :isScrolling="isScrolling || isMobile"
       :whichComponent="whichComponent"
       @update:isScrolling="isScrolling = $event"
       @update:whichComponent="whichComponent = $event"
@@ -22,9 +22,6 @@
       <div class="component" id="didyouknow">
         <DidYouKnowComponent />
       </div>
-      <div class="component" id="contactus">
-        <ContactUsComponent />
-      </div>
     </div>
   </div>
 </template>
@@ -35,7 +32,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NavBar from "@/components/NavBar.vue";
 import FirstComponent from "@/components/FirstComponent.vue";
 import SecondComponent from "@/components/SecondComponent.vue";
-import ContactUsComponent from "@/components/ContactUsComponent.vue";
+
 import WhatWeDoComponent from "@/components/WhatWeDoComponent.vue";
 import TheMissionComponent from "@/components/TheMissionComponent.vue";
 import DidYouKnowComponent from "@/components/DidYouKnowComponent.vue";
@@ -47,7 +44,7 @@ export default {
     NavBar,
     FirstComponent,
     SecondComponent,
-    ContactUsComponent,
+
     WhatWeDoComponent,
     TheMissionComponent,
     DidYouKnowComponent,
@@ -64,10 +61,12 @@ export default {
   mounted() {
     this.checkMobile();
     window.addEventListener("resize", this.checkMobile);
+    window.addEventListener("scroll", this.handleScroll); // Add scroll event listener
     this.initScrollTrigger();
   },
   unmounted() {
     window.removeEventListener("resize", this.checkMobile);
+    window.removeEventListener("scroll", this.handleScroll); // Remove scroll event listener
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
   },
   methods: {
@@ -90,7 +89,7 @@ export default {
           id: "snapper",
           trigger: container,
           start: "top bottom",
-          markers: true,
+          markers: false,
           snap: {
             snapTo: (progress, self) => {
               if (!this.shouldSnap(progress, self)) {
@@ -130,13 +129,14 @@ export default {
               );
               this.whichComponent = activeComponentIndex;
               this.isScrolling = false;
-              console.log(this.whichComponent);
             }
           },
         });
       }
     },
-
+    handleScroll() {
+      this.isScrolling = window.scrollY > 0;
+    },
     shouldSnap(progress, self) {
       const nearestComponents = [null, null]; // Initialize array to store nearest component start positions
       // Find the nearest components

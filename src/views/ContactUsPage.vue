@@ -2,30 +2,30 @@
   <div class="contact-us">
     <NavBar :isScrolling="isScrolling" :whichComponent="whichComponent" />
     <div class="contact-info" ref="contactInfo">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10960.379072649743!2d103.72753725042381!3d1.3997609386678358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da0f001c03d241%3A0xf686aacccb3e37da!2sSer%20Poh%20Farming%20and%20Trading%20Enterprise%20Pte%20Ltd!5e0!3m2!1sen!2ssg!4v1719127612106!5m2!1sen!2ssg"
-        width="600"
-        height="450"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-      <div class="contact-item">
-        <img :src="BeanSproutImage" alt="Chat Icon" class="icon" />
-        <p>Chat with us<br />6:00 - 00:00<br />7 days a week</p>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10960.379072649743!2d103.72753725042381!3d1.3997609386678358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da0f001c03d241%3A0xf686aacccb3e37da!2sSer%20Poh%20Farming%20and%20Trading%20Enterprise%20Pte%20Ltd!5e0!3m2!1sen!2ssg!4v1719127612106!5m2!1sen!2ssg"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
-      <div class="contact-item">
-        <img :src="BeanSproutImage" alt="Phone Icon" class="icon" />
-        <p>
-          Call us<br />1800 811 6453<br />Products & Orders: 06:00 - 00:00, 7
-          days a week<br />Company Info & Enquiries: 10:00 - 19:00, Monday -
-          Friday
-        </p>
-      </div>
-      <div class="contact-item">
-        <img :src="BeanSproutImage" alt="Store Icon" class="icon" />
-        <p>Find a Store</p>
+      <div class="contact-info-details">
+        <div class="contact-item">
+          <img :src="BeanSproutImage" alt="Phone Icon" class="icon" />
+          <p>
+            Call us<br />1800 811 6453<br />Products & Orders: 06:00 - 00:00, 7
+            days a week<br />Company Info & Enquiries: 10:00 - 19:00, Monday -
+            Friday
+          </p>
+        </div>
+        <div class="contact-item">
+          <img :src="BeanSproutImage" alt="Chat Icon" class="icon" />
+          <p>Find us<br />address<br />7 days a week</p>
+        </div>
       </div>
     </div>
     <div class="contact-form-container" ref="formContainer">
@@ -39,11 +39,6 @@
         <div class="form-group">
           <label for="email">Email:</label>
           <input type="email" id="email" v-model="form.email" required />
-        </div>
-
-        <div class="form-group">
-          <label for="products">Products interested:</label>
-          <input type="text" id="products" v-model="form.products" />
         </div>
 
         <div class="form-group">
@@ -142,6 +137,15 @@ export default {
   background-color: #e2e4e2;
   border-radius: 10px;
   padding: 20px;
+  flex-direction: row;
+}
+.map {
+  flex: 0.5;
+}
+.contact-info-details {
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-item {
@@ -198,6 +202,9 @@ export default {
   box-sizing: border-box; /* Ensure padding is included in the width calculation */
   min-height: 50px;
   resize: vertical;
+}
+.contact-form textarea {
+  min-height: 100px;
 }
 
 .contact-form button {
