@@ -45,14 +45,13 @@ export default {
 @import url("https://fonts.cdnfonts.com/css/maharlika");
 .bigContainer {
   width: 100%;
-  background-color: blue;
+
   display: flex;
   justify-content: center;
 }
 
 .products {
   display: grid;
-  background-color: red;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
@@ -115,7 +114,7 @@ export default {
 
   .product {
     padding: 10px;
-    width: 150px;
+    width: 140px;
   }
 
   .product p {

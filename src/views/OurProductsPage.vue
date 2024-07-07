@@ -121,6 +121,10 @@ export default {
   pointer-events: auto;
 }
 
+.content {
+  padding: 15px;
+}
+
 #bigWords {
   font-size: 36px;
   color: #6e8379;
@@ -172,7 +176,7 @@ export default {
   }
 
   .tab {
-    padding: 8px 15px; /* Adjust padding for smaller screens */
+    padding: 8px 10px; /* Adjust padding for smaller screens */
     font-size: 14px; /* Smaller font size for the tabs */
   }
 }

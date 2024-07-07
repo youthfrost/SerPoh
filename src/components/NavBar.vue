@@ -157,12 +157,13 @@ export default {
 }
 
 .navbar.scrolling {
-  background-color: rgba(149, 161, 146, 0.5);
+  background-color: rgba(124, 133, 121, 0.5);
 }
 
 nav {
   display: flex;
   flex: 0.25;
+  min-width: 300px;
 }
 
 ul {
@@ -204,5 +205,15 @@ button {
   opacity: 0; /* Initially hidden */
   transform: scaleX(0); /* Initially scaled to 0 width */
   transform-origin: left; /* Set the transform origin to the left edge */
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    justify-content: center;
+  }
+  nav {
+    display: flex;
+    flex: 0.7;
+  }
 }
 </style>

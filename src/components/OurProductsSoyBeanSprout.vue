@@ -69,7 +69,7 @@ export default {
 
   .product {
     padding: 10px;
-    width: 150px;
+    width: 140px;
   }
 
   .product p {

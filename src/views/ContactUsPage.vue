@@ -135,6 +135,7 @@ export default {
   margin-bottom: 20px;
   border: 2px solid #bfc7be;
   background-color: #e2e4e2;
+
   border-radius: 10px;
   padding: 20px;
   flex-direction: row;
@@ -225,7 +226,7 @@ export default {
   .contact-info {
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 80%;
   }
   .map iframe {
     width: 100%;

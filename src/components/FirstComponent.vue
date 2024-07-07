@@ -177,10 +177,9 @@ export default {
 @media (max-width: 576px) {
   .firstComponent {
     flex-direction: column;
-    height: 150vh;
+    height: 140vh;
   }
   .leftContainer {
-    height: 100vh;
     flex: 0.66;
   }
   .rightContainer {

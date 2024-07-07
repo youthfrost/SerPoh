@@ -40,7 +40,7 @@ export default {
 
 .bigContainer {
   width: 100%;
-  background-color: blue;
+
   display: flex;
   justify-content: center;
 }
@@ -110,7 +110,7 @@ export default {
 
   .product {
     padding: 10px;
-    width: 150px;
+    width: 140px;
   }
 
   .product p {

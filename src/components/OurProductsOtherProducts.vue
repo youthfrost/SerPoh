@@ -41,7 +41,6 @@ export default {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: blue;
 }
 
 .products {
@@ -110,7 +109,7 @@ export default {
 
   .product {
     padding: 10px;
-    width: 150px;
+    width: 140px;
   }
 
   .product p {
