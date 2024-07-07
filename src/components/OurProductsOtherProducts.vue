@@ -1,9 +1,11 @@
 <template>
-  <div class="products">
-    <div class="product" v-for="(product, index) in products" :key="index">
-      <img :src="product.image" :alt="product.name" class="product-image" />
-      <p v-if="product.weight">{{ product.weight }}g {{ product.name }}</p>
-      <p v-else>{{ product.name }}</p>
+  <div class="bigContainer">
+    <div class="products">
+      <div class="product" v-for="(product, index) in products" :key="index">
+        <img :src="product.image" :alt="product.name" class="product-image" />
+        <p v-if="product.weight">{{ product.weight }}g {{ product.name }}</p>
+        <p v-else>{{ product.name }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -35,12 +37,18 @@ export default {
 <style scoped>
 @import url("https://fonts.cdnfonts.com/css/maharlika");
 
-.products {
+.bigContainer {
+  width: 100%;
   display: flex;
+  justify-content: center;
+  background-color: blue;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 20px;
 }
 
 .product {
@@ -62,5 +70,51 @@ export default {
 .product p {
   font-size: 18px;
   color: #333;
+}
+
+@media (max-width: 1200px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; /* Adjust gap for smaller screens */
+  }
+
+  .product {
+    width: 200px; /* Full width for 2 columns */ /* Limit maximum width */
+  }
+
+  .product-image {
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .product p {
+    font-size: 16px; /* Decrease font size */
+    margin-bottom: 5px; /* Adjust spacing */
+  }
+}
+
+@media (max-width: 576px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center; /* Center items horizontally */
+    gap: 10px; /* Adjust gap for smaller screens */
+    width: 350px;
+  }
+
+  .product {
+    padding: 10px;
+    width: 150px;
+  }
+
+  .product p {
+    font-size: 14px; /* Further decrease font size */
+  }
 }
 </style>

@@ -61,4 +61,19 @@ export default {
   font-size: 18px;
   color: #333;
 }
+
+@media (max-width: 576px) {
+  .products {
+    width: 350px;
+  }
+
+  .product {
+    padding: 10px;
+    width: 150px;
+  }
+
+  .product p {
+    font-size: 14px; /* Further decrease font size */
+  }
+}
 </style>

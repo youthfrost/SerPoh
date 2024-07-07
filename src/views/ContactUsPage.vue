@@ -219,4 +219,47 @@ export default {
 .contact-form button:hover {
   background-color: #ced0ce;
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .map iframe {
+    width: 100%;
+    height: 300px;
+  }
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+  .contact-form label {
+    text-align: left;
+  }
+  .contact-form button {
+    width: 100%;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    max-width: calc(100% - 20px); /* Ensure it fits within the container */
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-form-container {
+    width: 90%;
+    padding: 10px;
+  }
+  .contact-form h1 {
+    font-size: 24px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    max-width: 100%; /* Ensure it fits within the container */
+  }
+  .contact-form label {
+    padding-right: 0;
+  }
+}
 </style>

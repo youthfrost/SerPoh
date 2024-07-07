@@ -34,8 +34,8 @@
             Other
           </button>
         </div>
-        <component :is="activeComponent" />
       </div>
+      <component :is="activeComponent" />
     </div>
   </div>
 </template>
@@ -110,7 +110,7 @@ export default {
   padding: 0;
   margin: 0;
   flex-direction: column;
-
+  min-height: 100vh;
   background-color: #f5f5f5;
   justify-content: flex-start;
   align-items: center;
