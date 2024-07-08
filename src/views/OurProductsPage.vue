@@ -161,15 +161,21 @@ export default {
   color: #fff;
 }
 
+#bannerImage {
+  width: 80vw;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 20px;
+}
+
 /* Media query for screens with max-width of 576px */
 @media (max-width: 576px) {
-  .thirdComponent {
-    height: auto; /* Adjust height for smaller screens */
-    padding-top: 20px;
-  }
-
-  #bigWords {
-    font-size: 28px; /* Smaller font size for the heading */
+  #bannerImage {
+    width: 100vw;
+    height: 200px;
+    object-fit: cover;
+    object-position: 50% 0;
     margin-bottom: 15px;
   }
 
@@ -180,11 +186,6 @@ export default {
   .tab {
     padding: 8px 10px; /* Adjust padding for smaller screens */
     font-size: 14px; /* Smaller font size for the tabs */
-  }
-  #bannerImage {
-    object-fit: none;
-    width: 100vw;
-    height: 180px;
   }
 }
 </style>
