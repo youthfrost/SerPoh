@@ -63,17 +63,13 @@ export default {
 }
 
 @media (max-width: 576px) {
-  .products {
-    width: 350px;
-  }
-
   .product {
     padding: 10px;
-    width: 140px;
+    width: 110px;
   }
 
   .product p {
-    font-size: 14px; /* Further decrease font size */
+    font-size: 12px; /* Further decrease font size */
   }
 }
 </style>

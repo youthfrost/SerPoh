@@ -113,16 +113,15 @@ export default {
     grid-template-columns: repeat(2, 1fr);
     justify-content: center; /* Center items horizontally */
     gap: 10px; /* Adjust gap for smaller screens */
-    width: 350px;
   }
 
   .product {
     padding: 18px;
-    width: 120px;
+    width: 100px;
   }
 
   .product p {
-    font-size: 14px; /* Further decrease font size */
+    font-size: 12px; /* Further decrease font size */
   }
 }
 </style>
