@@ -119,7 +119,7 @@ export default {
 @import url("https://fonts.cdnfonts.com/css/maharlika");
 
 .contact-us {
-  background-color: #95a192;
+  background-color: #b8beb5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,7 +133,7 @@ export default {
   justify-content: space-around;
   width: 80%;
   margin-bottom: 20px;
-  border: 2px solid #bfc7be;
+
   background-color: #e2e4e2;
 
   border-radius: 10px;
@@ -162,11 +162,12 @@ export default {
 }
 
 .contact-form-container {
-  background-color: #e2e4e2;
+  /*background-color: #e2e4e2; */
   padding: 20px;
   border-radius: 30px;
   width: 70%;
   text-align: center;
+  color: rgb(92, 99, 94);
 }
 
 .contact-form h1 {
@@ -219,6 +220,13 @@ export default {
 
 .contact-form button:hover {
   background-color: #ced0ce;
+}
+
+@media (max-width: 1200px) {
+  .map iframe {
+    width: 100%;
+    height: 350px;
+  }
 }
 
 /* Responsive adjustments */

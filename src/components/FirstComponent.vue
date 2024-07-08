@@ -110,7 +110,7 @@ export default {
 
 .shopButton {
   background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  color: rgb(90, 108, 97);
   padding: 18px 90px;
   border: none;
   border-radius: 0px;
@@ -177,7 +177,7 @@ export default {
 @media (max-width: 576px) {
   .firstComponent {
     flex-direction: column;
-    height: 140vh;
+    height: 130vh;
   }
   .leftContainer {
     flex: 0.66;

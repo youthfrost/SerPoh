@@ -3,7 +3,8 @@
     <NavBar :isScrolling="isScrolling" :whichComponent="whichComponent" />
     <div class="ourProducts">
       <div class="content">
-        <h1 id="bigWords">Let's eat Tauge Tau-gether!</h1>
+        <img src="@/assets/Title.png" alt="Banner" id="bannerImage" />
+
         <div class="product-tabs">
           <button
             class="tab"
@@ -31,7 +32,7 @@
             :class="{ active: activeTab === 'other' }"
             @click="activeTab = 'other'"
           >
-            Other
+            Others
           </button>
         </div>
       </div>
@@ -135,6 +136,7 @@ export default {
   display: flex;
   gap: 10px;
   margin-bottom: 30px;
+  margin-top: 30px;
   justify-content: center;
   z-index: 1000;
   pointer-events: auto;

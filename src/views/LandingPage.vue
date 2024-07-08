@@ -44,7 +44,6 @@ export default {
     NavBar,
     FirstComponent,
     SecondComponent,
-
     WhatWeDoComponent,
     TheMissionComponent,
     DidYouKnowComponent,
@@ -173,6 +172,7 @@ export default {
   font-family: "Maharlika", sans-serif;
   padding-top: 10px;
   padding-bottom: 10px;
+  background: rgb(232, 212, 215);
   /* Ensure the content does not overlap the navbar */
 }
 

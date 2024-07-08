@@ -79,6 +79,10 @@ export default {
   .products {
     grid-template-columns: repeat(3, 1fr);
   }
+  .product {
+    width: 180px; /* Full width for 2 columns */ /* Limit maximum width */
+    /* Reduce padding */
+  }
 }
 
 @media (max-width: 768px) {
@@ -88,14 +92,14 @@ export default {
   }
 
   .product {
-    width: 200px; /* Full width for 2 columns */ /* Limit maximum width */
+    width: 170px; /* Full width for 2 columns */ /* Limit maximum width */
     /* Reduce padding */
   }
 
   .product-image {
     height: auto;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   .product p {
@@ -113,8 +117,8 @@ export default {
   }
 
   .product {
-    padding: 10px;
-    width: 140px;
+    padding: 18px;
+    width: 120px;
   }
 
   .product p {
