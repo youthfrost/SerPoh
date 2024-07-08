@@ -162,20 +162,17 @@ export default {
 }
 
 #bannerImage {
-  width: 80vw;
-  height: 250px;
-  object-fit: cover;
-  object-position: center;
-  margin-bottom: 20px;
+  width: 100%; /* Adjusted to fill the container */
+  max-width: 100vw; /* Ensures image doesn't exceed viewport width */
+  height: 250px; /* Adjust the height as needed */
+  object-fit: cover; /* Maintain aspect ratio and cover container */
+  object-position: center; /* Center the image */
 }
 
 /* Media query for screens with max-width of 576px */
 @media (max-width: 576px) {
   #bannerImage {
-    width: 100vw;
-    height: 200px;
-    object-fit: cover;
-    object-position: 50% 0;
+    height: 200px; /* Reduced height for smaller screens */
     margin-bottom: 15px;
   }
 
@@ -185,7 +182,7 @@ export default {
 
   .tab {
     padding: 8px 10px; /* Adjust padding for smaller screens */
-    font-size: 14px; /* Smaller font size for the tabs */
+    font-size: 10px; /* Smaller font size for the tabs */
   }
 }
 </style>
