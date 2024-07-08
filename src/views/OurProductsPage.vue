@@ -181,5 +181,10 @@ export default {
     padding: 8px 10px; /* Adjust padding for smaller screens */
     font-size: 14px; /* Smaller font size for the tabs */
   }
+  #bannerImage {
+    object-fit: none;
+    width: 100vw;
+    height: 180px;
+  }
 }
 </style>
