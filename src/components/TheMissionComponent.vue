@@ -91,6 +91,7 @@ export default {
 }
 
 .title {
+  font-family: "Aloja";
   font-size: 60px;
   margin: 0;
 }

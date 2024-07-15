@@ -13,12 +13,13 @@
       <div class="component" id="second">
         <SecondComponent />
       </div>
-      <div class="component" id="whatwedo">
-        <WhatWeDoComponent />
-      </div>
       <div class="component" id="themission">
         <TheMissionComponent />
       </div>
+      <div class="component" id="special">
+        <WhatMakesUsSpecialComponent />
+      </div>
+
       <div class="component" id="didyouknow">
         <DidYouKnowComponent />
       </div>
@@ -33,10 +34,9 @@ import NavBar from "@/components/NavBar.vue";
 import FirstComponent from "@/components/FirstComponent.vue";
 import SecondComponent from "@/components/SecondComponent.vue";
 
-import WhatWeDoComponent from "@/components/WhatWeDoComponent.vue";
+import WhatMakesUsSpecialComponent from "@/components/WhatMakesUsSpecialComponent.vue";
 import TheMissionComponent from "@/components/TheMissionComponent.vue";
 import DidYouKnowComponent from "@/components/DidYouKnowComponent.vue";
-
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
@@ -44,7 +44,7 @@ export default {
     NavBar,
     FirstComponent,
     SecondComponent,
-    WhatWeDoComponent,
+    WhatMakesUsSpecialComponent,
     TheMissionComponent,
     DidYouKnowComponent,
   },
@@ -164,12 +164,12 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.cdnfonts.com/css/maharlika");
-
 .pageDisplay {
   margin: 0;
   padding: 0;
-  font-family: "Maharlika", sans-serif;
+  /*font-family: "NeoGothis ADF Std", sans-serif;*/
+  font-family: "Bauhaus Std", sans-serif;
+  font-weight: 350;
   padding-top: 10px;
   padding-bottom: 10px;
   background: rgb(232, 212, 215);

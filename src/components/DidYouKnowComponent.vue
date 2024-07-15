@@ -1,7 +1,7 @@
 <template>
   <div class="didYouKnowComponent" ref="didYouKnowComponent">
     <div class="bigWords-container">
-      <p class="bigWords">Did you know?</p>
+      <p class="bigWords">Rediscover TAUGE</p>
     </div>
     <div class="contentContainer">
       <div class="factContainer">
@@ -110,7 +110,6 @@ export default {
 
 <style scoped>
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
-
 .didYouKnowComponent {
   display: flex;
   flex: 1;
@@ -131,6 +130,7 @@ export default {
 .bigWords {
   margin: 0;
   font-size: 50px;
+  font-family: "Brusher", sans-serif;
   color: #ffffff;
   text-shadow: 2px 2px 4px #000000;
 }
@@ -182,7 +182,7 @@ hr {
   padding: 10px 30px;
   background-color: #66ef76;
   color: #333333;
-  /* 
+  /*
   background-color: #6e8379;
   color: #f2f2f2;*/
   border: none;
@@ -202,6 +202,7 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .follow-us {
@@ -283,7 +284,7 @@ hr {
   }
 
   .social-container {
-    align-items: flex-start;
+    align-items: center;
   }
 }
 

@@ -1,7 +1,7 @@
 <template>
   <div class="whatWeDoComponent" ref="whatWeDoComponent">
     <div class="bigWords-container">
-      <p class="bigWords">What We Do</p>
+      <p class="bigWords">What makes our beansprouts special</p>
     </div>
     <div class="contentContainer">
       <div
@@ -13,7 +13,10 @@
         <div class="imgContainer">
           <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
         </div>
-        <p class="description">Sustainable cultivation</p>
+        <p class="description">
+          Our traditional growing method somehow preserved the natural sweetness
+          in beansprouts.
+        </p>
         <transition name="modal-fade">
           <div v-show="showModals[0]" class="modal">Modal Content 1</div>
         </transition>
@@ -27,7 +30,10 @@
         <div class="imgContainer">
           <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
         </div>
-        <p class="description">Locally sourced goodness</p>
+        <p class="description">
+          Our retail packs are vacuum cooled and vacuum packed to enhance
+          shelf-life.
+        </p>
         <transition name="modal-fade">
           <div v-show="showModals[1]" class="modal">Modal Content 2</div>
         </transition>
@@ -41,7 +47,10 @@
         <div class="imgContainer">
           <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
         </div>
-        <p class="description">Nourishing natural goodness</p>
+        <p class="description">
+          Our soybean sprouts are more chewable which makes it friendly to
+          children and elderly.
+        </p>
         <transition name="modal-fade">
           <div v-show="showModals[2]" class="modal">Modal Content 3</div>
         </transition>
@@ -130,13 +139,17 @@ export default {
 .bigWords-container {
   flex: 0.3;
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: center;
+
+  text-align: center;
 }
 .bigWords {
+  font-family: "Aloja";
   justify-content: center;
   margin: 0;
-  font-size: 50px;
+  margin-top: 100px;
+  font-size: 40px;
   color: #818b7e;
 }
 .contentContainer {
@@ -150,6 +163,7 @@ export default {
 .firstContainer,
 .secondContainer,
 .thirdContainer {
+  flex: 0.33;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -197,7 +211,8 @@ export default {
 
 @media (max-width: 1200px) {
   .bigWords {
-    font-size: 45px;
+    font-size: 40px;
+    margin-top: 100px;
   }
   .description {
     font-size: 20px;
@@ -206,7 +221,7 @@ export default {
 
 @media (max-width: 992px) {
   .bigWords {
-    font-size: 40px;
+    font-size: 35px;
   }
   .description {
     font-size: 18px;
@@ -215,7 +230,8 @@ export default {
 
 @media (max-width: 768px) {
   .bigWords {
-    font-size: 35px;
+    font-size: 25px;
+    padding: 30px;
   }
   .description {
     font-size: 16px;

@@ -3,10 +3,8 @@
     <div class="leftContainer" ref="leftContainer">
       <div class="container">
         <p>logo</p>
-        <p class="bigWords">Farming Beansprouts Since 1992</p>
-        <p class="description">
-          Discover the Power of Fresh, Nutritious Bean Sprouts
-        </p>
+        <p class="bigWords">farming beansprouts since 1992</p>
+        <p class="description">新保农业 专种豆芽</p>
         <button class="shopButton" @click="link">Shop</button>
       </div>
     </div>
@@ -75,6 +73,7 @@ export default {
 
 <style scoped>
 @import url("https://fonts.cdnfonts.com/css/maharlika");
+@import url("https://fonts.cdnfonts.com/css/long-cang");
 
 .firstComponent {
   display: flex;
@@ -101,6 +100,10 @@ export default {
 .container {
   text-align: center;
   margin: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .leafImage {
@@ -116,7 +119,7 @@ export default {
   border-radius: 0px;
   font-size: 1.1em;
   cursor: pointer;
-  font-family: "Maharlika", sans-serif;
+  font-family: "Aloja", sans-serif;
 }
 
 .shopButton:hover {
@@ -131,7 +134,9 @@ export default {
 }
 
 .description {
-  font-size: 22px;
+  font-family: "Long Cang", sans-serif;
+  width: 100px;
+  font-size: 25px;
   margin-bottom: 19px;
   color: white;
 }
