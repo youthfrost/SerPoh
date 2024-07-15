@@ -47,7 +47,7 @@ export default {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 200px;
+  width: 170px;
 }
 
 .product-image {
@@ -58,7 +58,7 @@ export default {
 }
 
 .product p {
-  font-size: 18px;
+  font-size: 15px;
   color: #333;
 }
 

@@ -78,7 +78,7 @@ export default {
 .firstComponent {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: 90vh;
 }
 
 .leftContainer {
@@ -114,7 +114,7 @@ export default {
 .shopButton {
   background-color: #ffffff;
   color: rgb(90, 108, 97);
-  padding: 18px 90px;
+  padding: 12px 60px;
   border: none;
   border-radius: 0px;
   font-size: 1.1em;
@@ -128,7 +128,7 @@ export default {
 }
 
 .bigWords {
-  font-size: 65px;
+  font-size: 55px;
   margin-bottom: 0;
   color: white;
 }
@@ -143,7 +143,7 @@ export default {
 
 @media (max-width: 1200px) {
   .bigWords {
-    font-size: 60px;
+    font-size: 50px;
   }
   .description {
     font-size: 22px;

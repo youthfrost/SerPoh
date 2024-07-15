@@ -63,7 +63,7 @@ export default {
 }
 
 .product p {
-  font-size: 18px;
+  font-size: 15px;
   color: #333;
 }
 .product {
@@ -72,7 +72,7 @@ export default {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 200px; /* Maintain constant width */
+  width: 170px;
 }
 
 @media (max-width: 1200px) {

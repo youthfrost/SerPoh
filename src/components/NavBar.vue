@@ -184,7 +184,7 @@ button {
   background: none;
   border: none;
   font-family: "Maharlika", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: white;
   transition: color 0.3s ease;
   cursor: pointer;

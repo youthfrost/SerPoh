@@ -176,10 +176,6 @@ export default {
   /* Ensure the content does not overlap the navbar */
 }
 
-.component {
-  height: 100vh; /* Full viewport height */
-}
-
 @media (max-width: 576px) {
   .pageDisplay {
     margin: 0;

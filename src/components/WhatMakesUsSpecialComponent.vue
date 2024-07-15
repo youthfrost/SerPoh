@@ -11,7 +11,7 @@
         @mouseleave="hideModal(0)"
       >
         <div class="imgContainer">
-          <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
+          <img style="width: 70px" src="../assets/water.png" alt="water" />
         </div>
         <p class="description">
           Our traditional growing method somehow preserved the natural sweetness
@@ -45,7 +45,7 @@
         @mouseleave="hideModal(2)"
       >
         <div class="imgContainer">
-          <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
+          <img style="width: 70px" src="../assets/heart.png" alt="leaf" />
         </div>
         <p class="description">
           Our soybean sprouts are more chewable which makes it friendly to
@@ -163,11 +163,12 @@ export default {
 .firstContainer,
 .secondContainer,
 .thirdContainer {
-  flex: 0.33;
+  width: 300px;
+
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   height: 100px;
   cursor: pointer;
   position: relative; /* Added to ensure the modal positions correctly */
@@ -178,7 +179,7 @@ export default {
 }
 
 .description {
-  font-size: 25px;
+  font-size: 20px;
   color: #818b7e;
   margin-top: 10px;
   text-align: center;
@@ -215,7 +216,7 @@ export default {
     margin-top: 100px;
   }
   .description {
-    font-size: 20px;
+    font-size: 19px;
   }
 }
 
@@ -258,6 +259,7 @@ export default {
   }
   .description {
     flex: 0.6;
+    font-size: 14px;
   }
   .secondContainer {
     flex-direction: row-reverse;

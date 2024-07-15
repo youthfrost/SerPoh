@@ -5,23 +5,30 @@
     </div>
     <div class="contentContainer">
       <div class="factContainer">
-        <hr />
+        <div class="lineContainer">
+          <hr />
+        </div>
         <p class="description">
-          Beansprouts do not grow on cotton wool, not in soil nor in water.
+          Beansprouts do not require any growing medium. They do not require
+          light. They can be harvested in 4-5 days.
         </p>
       </div>
       <div class="factContainer">
-        <hr />
+        <div class="lineContainer">
+          <hr />
+        </div>
+        <p class="description">
+          Every part of a beansprout is edible including its husk.
+        </p>
+      </div>
+      <div class="factContainer">
+        <div class="lineContainer">
+          <hr />
+        </div>
         <p class="description">
           Beansprouts are rich in Vitamin C and antioxidants, boosting your
-          immune system naturally.
-        </p>
-      </div>
-      <div class="factContainer">
-        <hr />
-        <p class="description">
-          Eating beansprouts can aid digestion due to their high fiber content,
-          promoting a healthy gut.
+          immune system naturally. Eating beansprouts can aid digestion due to
+          their high fiber content, promoting a healthy gut.
         </p>
       </div>
     </div>
@@ -110,6 +117,7 @@ export default {
 
 <style scoped>
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+
 .didYouKnowComponent {
   display: flex;
   flex: 1;
@@ -121,12 +129,14 @@ export default {
   color: #ffffff;
   justify-content: center;
 }
+
 .bigWords-container {
   flex: 0.3;
   display: flex;
   align-items: end;
   justify-content: center;
 }
+
 .bigWords {
   margin: 0;
   font-size: 50px;
@@ -134,29 +144,37 @@ export default {
   color: #ffffff;
   text-shadow: 2px 2px 4px #000000;
 }
+
 .contentContainer {
   flex: 0.6;
   display: flex;
   justify-content: space-around;
   padding: 0 10% 10% 10%;
 }
+
 .factContainer {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
+  margin-top: 10%;
   flex: 0.3;
-  text-align: center;
 }
+
 .description {
-  font-size: 20px;
+  font-size: 18px;
   color: #ffffff;
   margin-top: 10px;
-  text-align: center;
 }
+
+.lineContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
 hr {
   width: 50px;
   border: 1px solid #ffffff;
+  margin: 0;
   margin-bottom: 10px;
 }
 
@@ -182,9 +200,6 @@ hr {
   padding: 10px 30px;
   background-color: #66ef76;
   color: #333333;
-  /*
-  background-color: #6e8379;
-  color: #f2f2f2;*/
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -286,26 +301,8 @@ hr {
   .social-container {
     align-items: center;
   }
+  .factContainer {
+    text-align: center;
+  }
 }
-
-/* Previous Design
-
-
-
-
-.contact-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #ff7f50;
-  color: #333333;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.contact-button:hover {
-  background-color: #ff6347;
-}
-*/
 </style>
