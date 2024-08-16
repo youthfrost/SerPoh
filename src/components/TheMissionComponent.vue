@@ -14,7 +14,11 @@
       </div>
     </div>
     <div class="rightContainer" ref="rightContainer">
-      <img src="@/assets/leaf.png" alt="Serum Bottle" class="missionImage" />
+      <img
+        src="@/assets/BarrelBeansprout.png"
+        alt="Serum Bottle"
+        class="missionImage"
+      />
     </div>
   </div>
 </template>
@@ -115,6 +119,7 @@ export default {
 
 .missionImage {
   max-width: 60%;
+  height: auto;
 }
 
 @media (max-width: 1200px) {
@@ -127,6 +132,9 @@ export default {
   .description {
     font-size: 16px;
   }
+  .missionImage {
+    max-width: 55%;
+  }
 }
 
 @media (max-width: 992px) {
@@ -138,6 +146,9 @@ export default {
   }
   .description {
     font-size: 14px;
+  }
+  .missionImage {
+    max-width: 50%;
   }
 }
 
@@ -170,7 +181,7 @@ export default {
     max-width: 100%;
   }
   .missionImage {
-    max-width: 60%;
+    max-width: 40%;
   }
 }
 

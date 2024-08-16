@@ -1,7 +1,7 @@
 <template>
   <div class="secondComponent" ref="secondComponent">
     <div class="leftContainer" ref="leftContainer">
-      <img src="@/assets/leaf.png" alt="Leaf" class="leafImage" />
+      <img src="@/assets/BarrelBeansprout.png" alt="barrel" class="leafImage" />
     </div>
     <div class="rightContainer" ref="rightContainer">
       <div class="text-container">
@@ -104,7 +104,7 @@ export default {
 }
 .leafImage {
   max-width: 80%;
-  height: 40%;
+  height: 45%;
 }
 .rightContainer {
   flex: 0.5;

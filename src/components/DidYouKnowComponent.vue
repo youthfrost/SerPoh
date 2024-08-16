@@ -125,7 +125,7 @@ export default {
   margin: 0;
   flex-direction: column;
   height: 100vh;
-  background: linear-gradient(135deg, #333333, #111111);
+  background: linear-gradient(135deg, #4b4949, #111111);
   color: #ffffff;
   justify-content: center;
 }

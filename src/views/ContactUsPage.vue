@@ -1,6 +1,7 @@
 <template>
   <div class="contact-us">
     <NavBar :isScrolling="isScrolling" :whichComponent="whichComponent" />
+
     <div class="contact-info" ref="contactInfo">
       <div class="map">
         <iframe
@@ -15,16 +16,26 @@
       </div>
       <div class="contact-info-details">
         <div class="contact-item">
-          <img :src="BeanSproutImage" alt="Phone Icon" class="icon" />
-          <p>
-            Call us<br />1800 811 6453<br />Products & Orders: 06:00 - 00:00, 7
-            days a week<br />Company Info & Enquiries: 10:00 - 19:00, Monday -
-            Friday
-          </p>
+          <img :src="PhoneImage" alt="Phone Icon" class="icon" />
+          <div class="contact-text">
+            <h3>Call Us</h3>
+            <p>
+              67937045<br />
+              admin@serpoh.com.sg
+              <br />
+              <span>Products & Orders:</span> 06:00 - 00:00, 7 days a week<br />
+            </p>
+          </div>
         </div>
         <div class="contact-item">
-          <img :src="BeanSproutImage" alt="Chat Icon" class="icon" />
-          <p>Find us<br />address<br />7 days a week</p>
+          <img :src="LocationImage" alt="Location Icon" class="icon" />
+          <div class="contact-text">
+            <h3>Find Us</h3>
+            <p>
+              3 Sungei Tengah Close, Singapore 699885<br />
+              <span>7 days a week</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -57,7 +68,8 @@
 <script>
 import gsap from "gsap";
 import NavBar from "@/components/NavBar.vue";
-import BeanSproutImage from "@/assets/leaf.png";
+import LocationImage from "@/assets/location.png";
+import PhoneImage from "@/assets/phone.png";
 
 export default {
   name: "ContactUs",
@@ -74,7 +86,8 @@ export default {
       },
       isScrolling: false,
       whichComponent: 6,
-      BeanSproutImage,
+      PhoneImage,
+      LocationImage,
     };
   },
   mounted() {
@@ -103,6 +116,21 @@ export default {
       });
     },
     animateContactInfo() {
+      gsap.from(this.$refs.contactInfo, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power4.out",
+      });
+
+      gsap.from(".map", {
+        opacity: 0,
+        scale: 0.9,
+        duration: 1,
+        ease: "power4.out",
+        delay: 0.5,
+      });
+
       gsap.from(".contact-item", {
         opacity: 0,
         y: 50,
@@ -119,6 +147,8 @@ export default {
 @import url("https://fonts.cdnfonts.com/css/maharlika");
 
 .contact-us {
+  font-family: "Bauhaus Std", sans-serif;
+  font-weight: 350;
   background-color: #b8beb5;
   display: flex;
   flex-direction: column;
@@ -126,6 +156,7 @@ export default {
   padding: 20px;
   min-height: 100vh; /* Ensure the height of the entire page is bigger */
   padding-top: 100px; /* Bring everything lower to avoid overlap with NavBar */
+  padding-bottom: 100px;
 }
 
 .contact-info {
@@ -133,26 +164,28 @@ export default {
   justify-content: space-around;
   width: 80%;
   margin-bottom: 20px;
-
   background-color: #e2e4e2;
-
   border-radius: 10px;
   padding: 20px;
   flex-direction: row;
 }
+
 .map {
   flex: 0.5;
 }
+
 .contact-info-details {
   flex: 0.5;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-item {
+  align-items: center;
+  margin: 10px 0;
   text-align: center;
-  flex: 1;
-  margin: 10px;
 }
 
 .contact-item .icon {
@@ -161,8 +194,28 @@ export default {
   margin-bottom: 10px;
 }
 
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-text h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.contact-text p {
+  margin: 5px 0 0;
+  color: #555;
+}
+
+.contact-text span {
+  font-weight: bold;
+}
+
 .contact-form-container {
-  /*background-color: #e2e4e2; */
   padding: 20px;
   border-radius: 30px;
   width: 70%;
@@ -205,6 +258,7 @@ export default {
   min-height: 50px;
   resize: vertical;
 }
+
 .contact-form textarea {
   min-height: 100px;
 }

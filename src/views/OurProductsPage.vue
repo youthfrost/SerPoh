@@ -88,11 +88,19 @@ export default {
   },
   methods: {
     animateContent() {
-      gsap.from("#bigWords", {
+      gsap.from("#bannerImage", {
         duration: 1,
-        y: -50,
         opacity: 0,
-        ease: "bounce",
+        y: -50,
+        ease: "power2.out",
+      });
+
+      gsap.from(".tab", {
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        ease: "power2.out",
+        stagger: 0.2,
       });
     },
     handleScroll() {

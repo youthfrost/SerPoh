@@ -2,7 +2,9 @@
   <div class="firstComponent" ref="firstComponent">
     <div class="leftContainer" ref="leftContainer">
       <div class="container">
-        <p>logo</p>
+        <div class="logoContainer">
+          <img class="logo" src="../assets/logo.png" alt="logo" />
+        </div>
         <p class="bigWords">farming beansprouts since 1992</p>
         <p class="description">新保农业 专种豆芽</p>
         <button class="shopButton" @click="link">Shop</button>
@@ -29,6 +31,26 @@ export default {
       this.$router.push({ name: "OurProducts" });
     },
     playAnimation() {
+      // Animate the logo
+      gsap.fromTo(
+        this.$refs.leftContainer.querySelector(".logo"),
+        { opacity: 0, scale: 0.5 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1.5,
+          ease: "elastic.out(1, 0.5)",
+          scrollTrigger: {
+            trigger: this.$refs.leftContainer,
+            start: "top 80%",
+            end: "bottom 20%",
+            markers: false,
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+
+      // Animate other elements
       gsap.fromTo(
         this.$refs.leftContainer.querySelectorAll(
           ".bigWords, .description, .shopButton"
@@ -106,6 +128,14 @@ export default {
   align-items: center;
 }
 
+.logoContainer {
+  margin: 0;
+}
+
+.logo {
+  width: 50px;
+}
+
 .leafImage {
   height: 100%;
   object-fit: cover;
@@ -130,6 +160,7 @@ export default {
 .bigWords {
   font-size: 55px;
   margin-bottom: 0;
+  margin-top: 0;
   color: white;
 }
 
