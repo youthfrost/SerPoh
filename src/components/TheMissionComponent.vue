@@ -157,7 +157,7 @@ export default {
   .missionComponent {
     flex-direction: column;
     text-align: center;
-    height: 100%;
+    height: 80vh;
     flex: 1;
   }
   .leftContainer {
@@ -190,7 +190,7 @@ export default {
 
 @media (max-width: 576px) {
   .missionComponent {
-    height: 100vh;
+    height: 80vh;
   }
 
   .title {

@@ -103,8 +103,7 @@ export default {
   background-color: #e8e4e4;
 }
 .leafImage {
-  max-width: 80%;
-  height: 45%;
+  max-width: 50%;
 }
 .rightContainer {
   flex: 0.5;
@@ -154,6 +153,7 @@ export default {
 @media (max-width: 768px) {
   .secondComponent {
     flex-direction: column;
+    height: 80vh;
   }
   .leftContainer {
     justify-content: center;
@@ -174,6 +174,9 @@ export default {
   }
   .description {
     font-size: 14px;
+  }
+  .leafImage {
+    max-height: 70%;
   }
 }
 
