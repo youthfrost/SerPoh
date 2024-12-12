@@ -39,6 +39,7 @@
         </div>
       </div>
     </div>
+    <!--
     <div class="contact-form-container" ref="formContainer">
       <h1>Get in touch with us now!!!</h1>
       <form @submit.prevent="submitForm" class="contact-form">
@@ -61,6 +62,19 @@
           <button type="submit">Submit</button>
         </div>
       </form>
+    </div>
+    -->
+    <div class="contact-form-container">
+      <h1>Get in touch with us now!!!</h1>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSfcYZfl6mrRGskZFfVh-uvS6ETtURPBx6XAc2ZeGmDwahS6LA/viewform?embedded=true"
+        width="640"
+        height="800"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        >Loading…</iframe
+      >
     </div>
   </div>
 </template>
@@ -101,8 +115,7 @@ export default {
   },
   methods: {
     submitForm() {
-      // Handle form submission
-      console.log(this.form);
+      console.log("form submitted");
     },
     handleScroll() {
       this.isScrolling = window.scrollY > 0;
@@ -274,6 +287,19 @@ export default {
 
 .contact-form button:hover {
   background-color: #ced0ce;
+}
+
+.contact-form-container iframe {
+  background-color: #fff; /* Set background color to white for seamless integration */
+  border: none; /* Remove border for a cleaner look */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+  border-radius: 10px; /* Add rounded corners to match the form container */
+}
+
+@media (max-width: 768px) {
+  .contact-form-container iframe {
+    height: 380px; /* Adjust height for smaller screens */
+  }
 }
 
 @media (max-width: 1200px) {
