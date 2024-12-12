@@ -298,7 +298,8 @@ export default {
 
 @media (max-width: 768px) {
   .contact-form-container iframe {
-    height: 380px; /* Adjust height for smaller screens */
+    height: 600px; /* Adjust height for smaller screens */
+    width: 400px;
   }
 }
 

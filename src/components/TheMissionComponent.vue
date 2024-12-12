@@ -149,6 +149,7 @@ export default {
   }
   .missionImage {
     max-width: 50%;
+    height: auto;
   }
 }
 
@@ -181,7 +182,9 @@ export default {
     max-width: 100%;
   }
   .missionImage {
-    max-width: 40%;
+    max-width: 50%;
+    max-height: 60vh; /* Limits the height */
+    object-fit: contain;
   }
 }
 
