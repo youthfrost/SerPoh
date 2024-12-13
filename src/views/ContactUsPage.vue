@@ -65,7 +65,7 @@
     </div>
     -->
     <div class="contact-form-container">
-      <h1>Get in touch with us now!!!</h1>
+      <h1>Get In Touch With Us Now!!!</h1>
       <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLSfcYZfl6mrRGskZFfVh-uvS6ETtURPBx6XAc2ZeGmDwahS6LA/viewform?embedded=true"
         width="640"
@@ -231,7 +231,7 @@ export default {
 .contact-form-container {
   padding: 20px;
   border-radius: 30px;
-  width: 70%;
+  width: 80%;
   text-align: center;
   color: rgb(92, 99, 94);
 }
@@ -296,14 +296,11 @@ export default {
   border-radius: 10px; /* Add rounded corners to match the form container */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .contact-form-container iframe {
     height: 600px; /* Adjust height for smaller screens */
-    width: 400px;
+    width: 100%;
   }
-}
-
-@media (max-width: 1200px) {
   .map iframe {
     width: 100%;
     height: 350px;
@@ -312,6 +309,17 @@ export default {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .contact-form-container iframe {
+    height: 600px; /* Adjust height for smaller screens */
+    width: 100%;
+  }
+  .contact-form-container iframe {
+    height: 600px; /* Adjust height for smaller screens */
+    width: 100%; /* Make it responsive */
+    transform: scale(0.95); /* Shrink everything, including fonts */
+    transform-origin: top center; /* Keep scaling centered */
+    border: none; /* Optional: Clean look */
+  }
   .contact-info {
     flex-direction: column;
     align-items: center;
