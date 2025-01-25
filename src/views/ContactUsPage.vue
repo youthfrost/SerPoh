@@ -64,6 +64,7 @@
       </form>
     </div>
     -->
+    <!--
     <div class="contact-form-container">
       <h1>Get In Touch With Us Now!!!</h1>
       <iframe
@@ -76,6 +77,22 @@
         >Loading…</iframe
       >
     </div>
+    -->
+    <div class="contact-form-container">
+    <iframe
+      id="JotFormIFrame-250242317554047"
+      title="Serpoh Enquiry"
+      onload="window.parent.scrollTo(0,0)"
+      allowtransparency="true"
+      allow="geolocation; microphone; camera; fullscreen"
+      src="https://form.jotform.com/serpoh1992/serpoh-enquiry"
+      frameborder="0"
+      style="min-width:100%; max-width:100%; height:539px; border:none;"
+      scrolling="no"
+    >
+    </iframe>
+  </div>
+    
   </div>
 </template>
 
@@ -104,10 +121,23 @@ export default {
       LocationImage,
     };
   },
+ 
+
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
     this.animateContactInfo(); // Animate contact info section when mounted
     this.animateForm(); // Animate form container when mounted
+
+    // Load the JotForm script dynamically
+    const script = document.createElement("script");
+    script.src = "https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js";
+    script.onload = () => {
+      window.jotformEmbedHandler(
+        "iframe[id='JotFormIFrame-250242317554047']",
+        "https://form.jotform.com/"
+      );
+    };
+    document.body.appendChild(script);
   },
 
   beforeDestroy() {
@@ -316,9 +346,7 @@ export default {
   .contact-form-container iframe {
     height: 600px; /* Adjust height for smaller screens */
     width: 100%; /* Make it responsive */
-    transform: scale(0.95); /* Shrink everything, including fonts */
-    transform-origin: top center; /* Keep scaling centered */
-    border: none; /* Optional: Clean look */
+
   }
   .contact-info {
     flex-direction: column;
@@ -346,7 +374,7 @@ export default {
 
 @media (max-width: 576px) {
   .contact-form-container {
-    width: 90%;
+    width: 100%;
     padding: 10px;
   }
   .contact-form h1 {
