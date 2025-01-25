@@ -8,7 +8,7 @@
       
       <div class="content-link-qr">
         <ul style="list-style-type: disc; padding-left: 20px;">
-          <p>Get started now:</p>
+          <p>Get started now!</p>
           <li>
             Buy Seeds:
             <a href="https://form.jotform.com/serpoh1992/serious-sprout-order-form" target="_blank" rel="noopener noreferrer">
@@ -78,6 +78,8 @@ export default {
   width: 55%;
   display: flex;
   flex-direction: column; 
+  font-size: 17px;
+  font-weight: 1000;
 }
 .content-link-qr {
   display: flex;
@@ -86,7 +88,7 @@ export default {
 }
 
 .content p {
-  font-size: 17px;
+
   color: #333;
   margin: 0;
 }
@@ -98,7 +100,6 @@ export default {
 
 .content ul li {
   margin: 5px 0;
-  font-size: 16px;
 }
 
 .qr-code {
@@ -106,6 +107,7 @@ export default {
   max-height: 100%; /* Prevent it from exceeding the container's height */
   object-fit: contain; /* Ensures it respects its aspect ratio */
   margin-top: 10px;
+  margin-left: 5px;
 }
 .products {
   display: grid;
@@ -140,7 +142,7 @@ export default {
     grid-template-columns: repeat(2, 1fr);
   }
   .content {
-    width: 60%;
+    width: 70%;
   }
 }
 
@@ -150,8 +152,15 @@ export default {
     gap: 10px;
   }
   .content {
-    width: 70%;
+    width: 95%;
+    font-size: 13px;
   }
+  .qr-code {
+  width: 60px; /* Set the desired width */
+  max-height: 100%; /* Prevent it from exceeding the container's height */
+  object-fit: contain; /* Ensures it respects its aspect ratio */
+  margin-top: 10px;
+}
 
   .product {
     width: 200px;
@@ -176,7 +185,7 @@ export default {
     gap: 10px;
   }
   .content {
-    width: 80%;
+    width: 90%;
   }
 
   .product {
