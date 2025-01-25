@@ -18,7 +18,8 @@
           <hr />
         </div>
         <p class="description">
-          Every part of a beansprout is edible including its husk and its roots.
+          Beansprouts can be harvested in 4 - 5 days. It acts as an important buffer in times of food supply shortage.
+          
         </p>
       </div>
       <div class="factContainer">
@@ -26,7 +27,7 @@
           <hr />
         </div>
         <p class="description">
-          Beansprouts can be harvested in 4 - 5 days. It acts as an important buffer in times of food supply shortage.
+          Every part of a beansprout is edible including its husk and its roots.
         </p>
       </div>
     </div>

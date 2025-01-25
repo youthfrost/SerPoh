@@ -16,7 +16,7 @@
     </div>
     <div class="rightContainer" ref="rightContainer">
       <img
-        src="@/assets/BarrelBeansprout.png"
+        src="@/assets/BarrelBeansprout01.png"
         alt="Serum Bottle"
         class="missionImage"
       />

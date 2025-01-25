@@ -15,19 +15,20 @@
       </div>
       <div class="secondContainer" ref="container2">
         <div class="imgContainer">
+          <img style="width: 70px" src="../assets/heart.png" alt="leaf" />
+        </div>
+        <p class="description">
+          Our soybean sprouts are harvested while tender which makes it friendly to children and elderly.
+        </p>
+      </div>
+      <div class="thirdContainer" ref="container3">
+        <div class="imgContainer">
           <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
         </div>
         <p class="description">
           Our packed beansprouts are vacuum cooled to preserve freshness and enhance
           shelf-life.
-        </p>
-      </div>
-      <div class="thirdContainer" ref="container3">
-        <div class="imgContainer">
-          <img style="width: 70px" src="../assets/heart.png" alt="leaf" />
-        </div>
-        <p class="description">
-          Our soybean sprouts are harvested while tender which makes it friendly to children and elderly.
+          
         </p>
       </div>
     </div>
