@@ -92,7 +92,7 @@ export default {
   padding: 0;
   margin: 0;
   flex-direction: row;
-  height: 100vh;
+  height: 80vh;
   background-color: #e8e4e4;
 }
 .leftContainer {
@@ -153,18 +153,21 @@ export default {
 @media (max-width: 768px) {
   .secondComponent {
     flex-direction: column;
-    height: 80vh;
+    height: 100vh;
   }
   .leftContainer {
     justify-content: center;
     align-items: center;
-    height: 50%;
+    height: 30%;
   }
   .rightContainer {
     align-items: center;
     text-align: center;
-    height: 50%;
+    height: 70%;
     margin: 0 10%;
+  }
+  .bigWords-container {
+  margin-bottom: 10px;
   }
   .text-container {
     flex: 1;

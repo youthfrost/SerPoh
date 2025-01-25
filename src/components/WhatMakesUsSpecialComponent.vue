@@ -101,12 +101,12 @@ export default {
   justify-content: center;
 }
 .bigWords-container {
-  flex: 0.3;
+  flex: 0.5;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-}
+  }
 .bigWords {
   font-family: "Aloja";
   justify-content: center;
@@ -116,11 +116,12 @@ export default {
   color: #818b7e;
 }
 .contentContainer {
-  flex: 0.7;
+  flex: 0.5;
   display: flex;
   justify-content: space-around;
-  padding: 0 10% 10% 10%;
-  align-items: center;
+  padding: 3% 10% 10% 10%;
+  align-items: flex-start; /* Align items to the top */
+
 }
 
 .firstContainer,
@@ -131,7 +132,7 @@ export default {
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  height: 100px;
+  
   cursor: pointer;
 }
 
@@ -149,7 +150,7 @@ export default {
 @media (max-width: 1200px) {
   .bigWords {
     font-size: 40px;
-    margin-top: 100px;
+    margin-top: 50px;
   }
   .description {
     font-size: 19px;
@@ -176,26 +177,32 @@ export default {
 }
 
 @media (max-width: 576px) {
+  .bigWords-container {
+  flex: 0.3;
+  
+  }
   .contentContainer {
     flex-direction: column;
     align-items: center;
+    flex: 0.7;
   }
+  
 
   .firstContainer,
   .secondContainer,
   .thirdContainer {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: row;
   }
   .imgContainer {
-    flex: 0.5;
+    flex: 0.3;
     display: flex;
     justify-content: center;
   }
   .description {
-    flex: 0.6;
-    font-size: 14px;
+    flex: 0.7;
+    font-size: 13px;
   }
   .secondContainer {
     flex-direction: row-reverse;
