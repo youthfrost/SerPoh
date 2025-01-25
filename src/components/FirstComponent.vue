@@ -7,7 +7,7 @@
         </div>
         <p class="bigWords">farming beansprouts since 1992</p>
         <p class="description">新保农业 专种豆芽</p>
-        <button class="shopButton" @click="link">Shop</button>
+        <button class="shopButton" @click="link">Catalogue</button>
       </div>
     </div>
     <div class="rightContainer" ref="rightContainer">

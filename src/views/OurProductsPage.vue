@@ -15,24 +15,24 @@
           </button>
           <button
             class="tab"
-            :class="{ active: activeTab === 'bean' }"
-            @click="activeTab = 'bean'"
+            :class="{ active: activeTab === 'first' }"
+            @click="activeTab = 'first'"
           >
-            Bean Sprout
+            Fresh Produce
           </button>
           <button
             class="tab"
-            :class="{ active: activeTab === 'soybean' }"
-            @click="activeTab = 'soybean'"
+            :class="{ active: activeTab === 'second' }"
+            @click="activeTab = 'second'"
           >
-            Soy Bean Sprout
+            Upcycled Product
           </button>
           <button
             class="tab"
-            :class="{ active: activeTab === 'other' }"
-            @click="activeTab = 'other'"
+            :class="{ active: activeTab === 'third' }"
+            @click="activeTab = 'third'"
           >
-            Others
+            Grow your own sprouts
           </button>
         </div>
       </div>
@@ -44,17 +44,17 @@
 <script>
 import { gsap } from "gsap";
 import NavBar from "@/components/NavBar.vue";
-import OurProductsBeanSprout from "@/components/OurProductsBeanSprout.vue";
-import OurProductsSoyBeanSprout from "@/components/OurProductsSoyBeanSprout.vue";
-import OurProductsOtherProducts from "@/components/OurProductsOtherProducts.vue";
+import OurProductsFirstTab from "@/components/OurProductsFirstTab.vue";
+import OurProductsSecondTab from "@/components/OurProductsSecondTab.vue";
+import OurProductsThirdTab from "@/components/OurProductsThirdTab.vue";
 import OurProductsAll from "@/components/OurProductsAll.vue"; // Import the new component
 
 export default {
   components: {
     NavBar,
-    OurProductsBeanSprout,
-    OurProductsSoyBeanSprout,
-    OurProductsOtherProducts,
+    OurProductsFirstTab,
+    OurProductsSecondTab,
+    OurProductsThirdTab,
     OurProductsAll, // Register the new component
   },
   data() {
@@ -67,12 +67,12 @@ export default {
   computed: {
     activeComponent() {
       switch (this.activeTab) {
-        case "soybean":
-          return "OurProductsSoyBeanSprout";
-        case "other":
-          return "OurProductsOtherProducts";
-        case "bean":
-          return "OurProductsBeanSprout";
+        case "first":
+          return "OurProductsFirstTab";
+        case "second":
+          return "OurProductsSecondTab";
+        case "third":
+          return "OurProductsThirdTab";
         case "all":
         default:
           return "OurProductsAll"; // Default to the new component

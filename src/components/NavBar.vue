@@ -25,7 +25,7 @@
             @mouseenter="animateUnderline($event, true)"
             @mouseleave="animateUnderline($event, false)"
           >
-            Shop
+            Catalogue
             <span
               class="underline"
               :style="{ backgroundColor: textColor }"
