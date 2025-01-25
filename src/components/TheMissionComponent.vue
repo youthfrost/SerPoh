@@ -16,7 +16,7 @@
     </div>
     <div class="rightContainer" ref="rightContainer">
       <img
-        src="@/assets/BeansproutBowl.jfif"
+        src="@/assets/BarrelBeansprout.png"
         alt="Serum Bottle"
         class="missionImage"
       />

@@ -100,7 +100,7 @@ export default {
 .firstComponent {
   display: flex;
   flex-direction: row;
-  height: 90vh;
+  height: 95vh;
 }
 
 .leftContainer {
@@ -144,7 +144,7 @@ export default {
 .shopButton {
   background-color: #ffffff;
   color: rgb(90, 108, 97);
-  padding: 12px 60px;
+  padding: 12px 20px;
   border: none;
   border-radius: 0px;
   font-size: 1.1em;
@@ -193,7 +193,7 @@ export default {
   }
   .shopButton {
     font-size: 0.9em;
-    padding: 15px 75px;
+    padding: 15px 20px;
   }
 }
 
@@ -206,7 +206,7 @@ export default {
   }
   .shopButton {
     font-size: 0.8em;
-    padding: 12px 60px;
+    padding: 12px 20px;
   }
 }
 
@@ -230,7 +230,7 @@ export default {
   }
   .shopButton {
     font-size: 1em;
-    padding: 10px 50px;
+    padding: 10px 20px;
   }
 }
 </style>

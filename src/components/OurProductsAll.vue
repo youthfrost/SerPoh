@@ -20,13 +20,17 @@ export default {
   data() {
     return {
       products: [
-        { name: "Bean Sprout", weight: 200, image: BeanSproutImage },
-        { name: "Bean Sprout", weight: 300, image: BeanSproutImage },
-        { name: "Bean Sprout", weight: 500, image: BeanSproutImage },
-        { name: "Bean Sprout", weight: 1000, image: BeanSproutImage },
-        { name: "Soy Bean Sprout", weight: 200, image: SoyBeanSproutImage },
-        { name: "Bean Sprout Husk", weight: 200, image: OtherProductImage },
+        { name: "Bean Sprout",  image: BeanSproutImage },
+        { name: "Soy Bean Sprout", image: BeanSproutImage },
+        { name: "Dried Bean Sprout Husk",  image: OtherProductImage },
         { name: "Bean Sprout pen", image: OtherProductImage },
+        { name: "Mason Jar Sprouting Kit", image: OtherProductImage },
+        
+        { name: "Organic Broccoli Sprouting Seeds", image: OtherProductImage },
+        { name: "Organic Alfafa Sprouting Seeds", image: OtherProductImage },
+        { name: "Organic Crimson Clover Sprouting Seeds",  image: OtherProductImage },
+        { name: "Organic Radish (Daikon Minowase) Sprouting Seeds", image: OtherProductImage },
+        { name: "Organic Radish (Red Vulcano) Sprouting Seeds", image: OtherProductImage },
       ],
     };
   },

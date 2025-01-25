@@ -1,7 +1,7 @@
 <template>
   <div class="secondComponent" ref="secondComponent">
     <div class="leftContainer" ref="leftContainer">
-      <img src="@/assets/BarrelBeansprout.png" alt="barrel" class="leafImage" />
+      <img src="@/assets/BeansproutBowl.png" alt="barrel" class="leafImage" />
     </div>
     <div class="rightContainer" ref="rightContainer">
       <div class="text-container">

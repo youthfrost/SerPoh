@@ -3,7 +3,7 @@
     <div class="products">
       <div class="product" v-for="(product, index) in products" :key="index">
         <img :src="product.image" :alt="product.name" class="product-image" />
-        <p>{{ product.weight }}g {{ product.name }}</p>
+        <p>{{ product.name }}</p>
       </div>
     </div>
   </div>
@@ -17,14 +17,9 @@ export default {
   data() {
     return {
       products: [
-        { name: "Bean Sprout", weight: 200, image: BeanSproutImage },
-        { name: "Bean Sprout", weight: 300, image: BeanSproutImage },
-        { name: "Bean Sprout", weight: 500, image: BeanSproutImage },
-        { name: "Bean Sprout", weight: 1000, image: BeanSproutImage },
+        { name: "Bean Sprout", weight: "", image: BeanSproutImage },
         { name: "Soy Bean Sprout", weight: 1000, image: BeanSproutImage },
-        { name: "Soy Bean Sprout", weight: 1000, image: BeanSproutImage },
-        { name: "Soy Bean Sprout", weight: 1000, image: BeanSproutImage },
-        { name: "Soy Bean Sprout", weight: 1000, image: BeanSproutImage },
+ 
 
       ],
     };
@@ -52,7 +47,8 @@ export default {
 
 .products {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /**just edit number here to centralise */
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   justify-content: center;
 }

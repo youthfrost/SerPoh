@@ -3,7 +3,7 @@
   <div class="products">
     <div class="product" v-for="(product, index) in products" :key="index">
       <img :src="product.image" :alt="product.name" class="product-image" />
-      <p>{{ product.weight }}g {{ product.name }}</p>
+      <p>{{ product.name }}</p>
     </div>
   </div>
   </div>
@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       products: [
-        { name: "Dried Beansprout Husk", weight: 200, image: SoyBeanSproutImage },
+        { name: "Dried Beansprout Husk", weight: "", image: SoyBeanSproutImage },
  
       ],
     };
