@@ -10,7 +10,7 @@
         </div>
         <p class="description">
           Our traditional growing method somehow preserved the natural sweetness
-          in beansprouts.
+          in beansprouts, promising zero preservative and zero pesticides
         </p>
       </div>
       <div class="secondContainer" ref="container2">
@@ -18,7 +18,7 @@
           <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
         </div>
         <p class="description">
-          Our retail packs are vacuum cooled and vacuum packed to enhance
+          Our packed beansprouts are vacuum cooled to preserve freshness and enhance
           shelf-life.
         </p>
       </div>
@@ -27,8 +27,7 @@
           <img style="width: 70px" src="../assets/heart.png" alt="leaf" />
         </div>
         <p class="description">
-          Our soybean sprouts are more chewable which makes it friendly to
-          children and elderly.
+          Our soybean sprouts are harvested while tender which makes it friendly to children and elderly.
         </p>
       </div>
     </div>

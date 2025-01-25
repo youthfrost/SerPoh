@@ -9,8 +9,8 @@
           <hr />
         </div>
         <p class="description">
-          Beansprouts do not require any growing medium. They do not require
-          light. They can be harvested in 4-5 days.
+          Beansprouts do not require any growing media. They do not require
+          light to grow. They take up very little space too!
         </p>
       </div>
       <div class="factContainer">
@@ -18,7 +18,7 @@
           <hr />
         </div>
         <p class="description">
-          Every part of a beansprout is edible including its husk.
+          Every part of a beansprout is edible including its husk and its roots.
         </p>
       </div>
       <div class="factContainer">
@@ -26,9 +26,7 @@
           <hr />
         </div>
         <p class="description">
-          Beansprouts are rich in Vitamin C and antioxidants, boosting your
-          immune system naturally. Eating beansprouts can aid digestion due to
-          their high fiber content, promoting a healthy gut.
+          Beansprouts can be harvested in 4 - 5 days. It acts as an important buffer in times of food supply shortage.
         </p>
       </div>
     </div>

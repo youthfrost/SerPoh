@@ -6,7 +6,7 @@
           <img class="logo" src="../assets/logo.png" alt="logo" />
         </div>
         <p class="bigWords">farming beansprouts since 1992</p>
-        <p class="description">新保农业 专种豆芽</p>
+        <!-- <p class="description">新保农业 专种豆芽</p>-->
         <button class="shopButton" @click="link">Catalogue</button>
       </div>
     </div>
@@ -159,7 +159,7 @@ export default {
 
 .bigWords {
   font-size: 55px;
-  margin-bottom: 0;
+  margin-bottom: 30px;
   margin-top: 0;
   color: white;
 }

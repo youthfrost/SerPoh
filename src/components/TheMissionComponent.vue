@@ -8,9 +8,10 @@
         </p>
         <p class="description">A sense of duty keeps us going.</p>
         <p class="description">
-          It is a day-to-day routine of sow and harvest. Simple yet
-          sophisticated.
+          A day-to-day routine of sow and harvest. 
         </p>
+        <p class="description">Simple yet
+          sophisticated.</p>
       </div>
     </div>
     <div class="rightContainer" ref="rightContainer">
