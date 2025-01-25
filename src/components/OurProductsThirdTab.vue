@@ -18,8 +18,19 @@ export default {
   data() {
     return {
       products: [
-        { name: "Bean Sprout Husk", weight: 200, image: OtherProductImage },
-        { name: "Bean Sprout pen", image: OtherProductImage }, // No weight provided
+        { name: "Organic Broccoli Sprouting Seeds", weight: "100/200/300", image: OtherProductImage },
+        { name: "Organic Broccoli Sprouting Seeds", weight: 200, image: OtherProductImage },
+        { name: "Organic Broccoli Sprouting Seeds", weight: 200, image: OtherProductImage },
+        { name: "Organic Alfafa Sprouting Seeds", weight: 200, image: OtherProductImage },
+        { name: "Organic Alfafa Sprouting Seeds", weight: 200, image: OtherProductImage },
+        { name: "Organic Alfafa Sprouting Seeds", weight: 200, image: OtherProductImage },
+        { name: "Organic Crimson Clover Sprouting Seeds", weight: 200, image: OtherProductImage },
+        { name: "Organic Crimson Clover Sprouting Seeds", weight: 200, image: OtherProductImage },
+        { name: "Organic Crimson Clover Sprouting Seeds", weight: 200, image: OtherProductImage },
+        { name: "Organic Radish (Daikon Minowase) Sprouting Seeds", weight: 200, image: OtherProductImage },
+        { name: "Organic Radish (Daikon Minowase) Sprouting Seeds", weight: 200, image: OtherProductImage },
+        { name: "Organic Radish (Daikon Minowase) Sprouting Seeds", weight: 200, image: OtherProductImage },
+        { name: "Organic Alfafa Sprouting Seeds", image: OtherProductImage }, // No weight provided
       ],
     };
   },
@@ -45,7 +56,7 @@ export default {
 
 .products {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   justify-content: center;
 }

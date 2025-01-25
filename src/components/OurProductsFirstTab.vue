@@ -21,6 +21,11 @@ export default {
         { name: "Bean Sprout", weight: 300, image: BeanSproutImage },
         { name: "Bean Sprout", weight: 500, image: BeanSproutImage },
         { name: "Bean Sprout", weight: 1000, image: BeanSproutImage },
+        { name: "Soy Bean Sprout", weight: 1000, image: BeanSproutImage },
+        { name: "Soy Bean Sprout", weight: 1000, image: BeanSproutImage },
+        { name: "Soy Bean Sprout", weight: 1000, image: BeanSproutImage },
+        { name: "Soy Bean Sprout", weight: 1000, image: BeanSproutImage },
+
       ],
     };
   },

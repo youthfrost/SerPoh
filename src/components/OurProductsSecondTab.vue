@@ -1,9 +1,11 @@
 <template>
+  <div class="bigContainer">
   <div class="products">
     <div class="product" v-for="(product, index) in products" :key="index">
       <img :src="product.image" :alt="product.name" class="product-image" />
       <p>{{ product.weight }}g {{ product.name }}</p>
     </div>
+  </div>
   </div>
 </template>
 
@@ -15,7 +17,8 @@ export default {
   data() {
     return {
       products: [
-        { name: "Soy Bean Sprout", weight: 200, image: SoyBeanSproutImage },
+        { name: "Dried Beansprout Husk", weight: 200, image: SoyBeanSproutImage },
+ 
       ],
     };
   },
@@ -33,13 +36,18 @@ export default {
 <style scoped>
 @import url("https://fonts.cdnfonts.com/css/maharlika");
 
-.products {
+.bigContainer {
+  width: 100%;
   display: flex;
+  justify-content: center;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
   gap: 20px;
   justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 20px;
 }
+
 
 .product {
   background-color: #fff;
