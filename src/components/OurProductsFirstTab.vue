@@ -1,35 +1,46 @@
 <template>
-  <div class="bigContainer">
-    <div class="products">
-      <div class="product" v-for="(product, index) in products" :key="index">
-        <img :src="product.image" :alt="product.name" class="product-image" />
-        <p>{{ product.name }}</p>
+  <div class="allContainer">
+    <div class="bigContainer">
+      <div class="products">
+        <div class="product" v-for="(product, index) in products" :key="index">
+          <img :src="product.image" :alt="product.name" class="product-image" />
+          <p>{{ product.name }}</p>
+        </div>
       </div>
     </div>
+    <p class="coming-soon">MORE COMING SOON....</p>
   </div>
 </template>
 
 <script>
 import { gsap } from "gsap";
 import BeanSproutImage from "@/assets/leaf.png"; // Update this path to your uploaded image
-
+import CatalogueBeansproutsImage from "@/assets/Catalogue_Beansprouts.png";
+import CatalogueSoybeanSproutsImage from "@/assets/Catalogue_Beansprouts.png";
 export default {
   data() {
     return {
       products: [
-        { name: "Bean Sprout", weight: "", image: BeanSproutImage },
-        { name: "Soy Bean Sprout", weight: 1000, image: BeanSproutImage },
- 
-
+        { name: "Beansprout", image: CatalogueBeansproutsImage },
+        { name: "Soybean Sprout", image: CatalogueSoybeanSproutsImage },
       ],
     };
   },
   mounted() {
     this.animateContent();
+    this.animateComingSoon();
   },
   methods: {
     animateContent() {
       gsap.from(".product", { duration: 1, y: 50, opacity: 0, stagger: 0.2 });
+    },
+    animateComingSoon() {
+      gsap.to(".coming-soon", {
+        opacity: 0.2,
+        duration: 1,
+        repeat: -1,
+        yoyo: true,
+      });
     },
   },
 };
@@ -40,18 +51,17 @@ export default {
 
 .bigContainer {
   width: 100%;
-
   display: flex;
   justify-content: center;
 }
 
 .products {
   display: grid;
-  /**just edit number here to centralise */
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   justify-content: center;
 }
+
 .product {
   background-color: #fff;
   padding: 20px;
@@ -73,48 +83,36 @@ export default {
   color: #333;
 }
 
-@media (max-width: 1200px) {
-  .products {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.coming-soon {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff6600;
+  margin-top: 20px;
 }
 
 @media (max-width: 768px) {
   .products {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px; /* Adjust gap for smaller screens */
+    gap: 10px;
   }
-
   .product {
-    width: 200px; /* Full width for 2 columns */ /* Limit maximum width */
-  }
-
-  .product-image {
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-
-  .product p {
-    font-size: 16px; /* Decrease font size */
-    margin-bottom: 5px; /* Adjust spacing */
+    width: 200px;
   }
 }
 
 @media (max-width: 576px) {
   .products {
     grid-template-columns: repeat(2, 1fr);
-    justify-content: center; /* Center items horizontally */
-    gap: 10px; /* Adjust gap for smaller screens */
+    justify-content: center;
+    gap: 10px;
   }
-
   .product {
     padding: 18px;
     width: 100px;
   }
-
   .product p {
-    font-size: 12px; /* Further decrease font size */
+    font-size: 12px;
   }
 }
 </style>

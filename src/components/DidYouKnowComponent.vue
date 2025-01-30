@@ -9,8 +9,8 @@
           <hr />
         </div>
         <p class="description">
-          Beansprouts do not require any growing media. They do not require
-          light to grow. They take up very little space too!
+          Beansprouts do not grow in soil nor require any growing media. They do
+          not require light to grow. They take up very little space too!
         </p>
       </div>
       <div class="factContainer">
@@ -18,8 +18,8 @@
           <hr />
         </div>
         <p class="description">
-          Beansprouts can be harvested in 4 - 5 days. It acts as an important buffer in times of food supply shortage.
-          
+          Beansprouts can be harvested in 4 - 5 days. It acts as an important
+          buffer in times of food supply shortage.
         </p>
       </div>
       <div class="factContainer">
@@ -27,7 +27,7 @@
           <hr />
         </div>
         <p class="description">
-          Every part of a beansprout is edible including its husk and its roots.
+          Every part of a beansprout is edible including its husk and its root.
         </p>
       </div>
     </div>
@@ -37,7 +37,7 @@
       <hr class="horizontal-line" />
       <div class="contact-social-container">
         <button @click="redirectToContactUs" class="contact-button">
-          Contact Us Now!!!
+          Contact Us Now
         </button>
         <div class="social-container">
           <p class="follow-us">Follow us on social media</p>

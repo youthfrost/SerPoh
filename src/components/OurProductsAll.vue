@@ -15,22 +15,41 @@ import { gsap } from "gsap";
 import BeanSproutImage from "@/assets/leaf.png"; // Update this path to your uploaded image
 import SoyBeanSproutImage from "@/assets/leaf.png";
 import OtherProductImage from "@/assets/leaf.png";
+import CatalogueBeansproutsImage from "@/assets/Catalogue_Beansprouts.png";
+import CatalogueSoybeanSproutImage from "@/assets/Catalogue_SoybeanSprouts.png";
+import CatalogueDriedBeanSproutHusk from "@/assets/Catalogue_BeansproutHusks.png";
+import CatalogueMasonJarSproutingKit from "@/assets/Catalogue_Beansprouts.png";
+import CatalogueOrganicBroccoliSproutingSeeds from "@/assets/Catalogue_Beansprouts.png";
+import CatalogueOrganicAlfafaSproutingSeeds from "@/assets/Catalogue_Beansprouts.png";
+import CatalogueOrganicCrimsonCloverSproutingSeeds from "@/assets/Catalogue_Beansprouts.png";
 
 export default {
   data() {
     return {
       products: [
-        { name: "Bean Sprout",  image: BeanSproutImage },
-        { name: "Soy Bean Sprout", image: BeanSproutImage },
-        { name: "Dried Bean Sprout Husk",  image: OtherProductImage },
-        { name: "Bean Sprout pen", image: OtherProductImage },
-        { name: "Mason Jar Sprouting Kit", image: OtherProductImage },
-        
-        { name: "Organic Broccoli Sprouting Seeds", image: OtherProductImage },
+        { name: "Beansprout", image: CatalogueBeansproutsImage },
+        { name: "Soybean Sprout", image: CatalogueSoybeanSproutImage },
+        { name: "Dried Bean Sprout Husk", image: CatalogueDriedBeanSproutHusk },
+
+        { name: "Mason Jar Sprouting Kit", image: CatalogueBeansproutsImage },
+
+        {
+          name: "Organic Broccoli Sprouting Seeds",
+          image: CatalogueBeansproutsImage,
+        },
         { name: "Organic Alfafa Sprouting Seeds", image: OtherProductImage },
-        { name: "Organic Crimson Clover Sprouting Seeds",  image: OtherProductImage },
-        { name: "Organic Radish (Daikon Minowase) Sprouting Seeds", image: OtherProductImage },
-        { name: "Organic Radish (Red Vulcano) Sprouting Seeds", image: OtherProductImage },
+        {
+          name: "Organic Crimson Clover Sprouting Seeds",
+          image: OtherProductImage,
+        },
+        {
+          name: "Organic Radish (Daikon Minowase) Sprouting Seeds",
+          image: OtherProductImage,
+        },
+        {
+          name: "Organic Radish (Red Vulcano) Sprouting Seeds",
+          image: OtherProductImage,
+        },
       ],
     };
   },

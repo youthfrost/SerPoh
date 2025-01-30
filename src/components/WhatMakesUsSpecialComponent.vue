@@ -10,7 +10,7 @@
         </div>
         <p class="description">
           Our traditional growing method somehow preserved the natural sweetness
-          in beansprouts, promising zero preservative and zero pesticides
+          in beansprouts, promising zero preservative and zero pesticides.
         </p>
       </div>
       <div class="secondContainer" ref="container2">
@@ -18,7 +18,8 @@
           <img style="width: 70px" src="../assets/heart.png" alt="leaf" />
         </div>
         <p class="description">
-          Our soybean sprouts are harvested while tender which makes it friendly to children and elderly.
+          Our soybean sprouts are harvested while tender which makes it friendly
+          to children and elderly.
         </p>
       </div>
       <div class="thirdContainer" ref="container3">
@@ -26,9 +27,8 @@
           <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
         </div>
         <p class="description">
-          Our packed beansprouts are vacuum cooled to preserve freshness and enhance
-          shelf-life.
-          
+          Our packed beansprouts are vacuum cooled to preserve freshness and
+          enhance shelf-life.
         </p>
       </div>
     </div>
@@ -107,7 +107,7 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
-  }
+}
 .bigWords {
   font-family: "Aloja";
   justify-content: center;
@@ -122,7 +122,6 @@ export default {
   justify-content: space-around;
   padding: 3% 10% 10% 10%;
   align-items: flex-start; /* Align items to the top */
-
 }
 
 .firstContainer,
@@ -133,7 +132,7 @@ export default {
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  
+
   cursor: pointer;
 }
 
@@ -179,15 +178,13 @@ export default {
 
 @media (max-width: 576px) {
   .bigWords-container {
-  flex: 0.3;
-  
+    flex: 0.3;
   }
   .contentContainer {
     flex-direction: column;
     align-items: center;
     flex: 0.7;
   }
-  
 
   .firstContainer,
   .secondContainer,
