@@ -20,10 +20,10 @@
           <div class="contact-text">
             <h3>Call Us</h3>
             <p>
-              67937045<br />
+              84119929<br />
               admin@serpoh.com.sg
               <br />
-              <span>Products & Orders:</span> 06:00 - 00:00, 7 days a week<br />
+              <span></span>Monday - Saturday, 09:00 - 17:00 <br />
             </p>
           </div>
         </div>
@@ -33,7 +33,7 @@
             <h3>Find Us</h3>
             <p>
               3 Sungei Tengah Close, Singapore 699885<br />
-              <span>7 days a week</span>
+              <span>Monday - Friday, 09:00 - 17:00</span>
             </p>
           </div>
         </div>
@@ -79,20 +79,19 @@
     </div>
     -->
     <div class="contact-form-container">
-    <iframe
-      id="JotFormIFrame-250242317554047"
-      title="Serpoh Enquiry"
-      onload="window.parent.scrollTo(0,0)"
-      allowtransparency="true"
-      allow="geolocation; microphone; camera; fullscreen"
-      src="https://form.jotform.com/serpoh1992/serpoh-enquiry"
-      frameborder="0"
-      style="min-width:100%; max-width:100%; height:539px; border:none;"
-      scrolling="no"
-    >
-    </iframe>
-  </div>
-    
+      <iframe
+        id="JotFormIFrame-250242317554047"
+        title="Serpoh Enquiry"
+        onload="window.parent.scrollTo(0,0)"
+        allowtransparency="true"
+        allow="geolocation; microphone; camera; fullscreen"
+        src="https://form.jotform.com/serpoh1992/serpoh-enquiry"
+        frameborder="0"
+        style="min-width: 100%; max-width: 100%; height: 539px; border: none"
+        scrolling="no"
+      >
+      </iframe>
+    </div>
   </div>
 </template>
 
@@ -121,7 +120,6 @@ export default {
       LocationImage,
     };
   },
- 
 
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
@@ -254,10 +252,6 @@ export default {
   color: #555;
 }
 
-.contact-text span {
-  font-weight: bold;
-}
-
 .contact-form-container {
   padding: 20px;
   border-radius: 30px;
@@ -346,7 +340,6 @@ export default {
   .contact-form-container iframe {
     height: 600px; /* Adjust height for smaller screens */
     width: 100%; /* Make it responsive */
-
   }
   .contact-info {
     flex-direction: column;

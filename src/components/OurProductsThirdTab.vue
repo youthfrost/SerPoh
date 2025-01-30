@@ -5,8 +5,8 @@
         <ul>
           <li>
             <p style="padding: 10px 0">
-              Start your journey to cultivating fresh and nutritious beansprouts
-              at home. It's easy, fun, and rewarding!
+              Start your journey to cultivating fresh and nutritious sprouts at
+              home. It's easy, fun, and rewarding!
             </p>
             <a
               href="https://form.jotform.com/serpoh1992/serious-sprout-order-form"

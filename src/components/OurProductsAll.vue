@@ -31,11 +31,11 @@ export default {
         { name: "Soybean Sprout", image: CatalogueSoybeanSproutImage },
         { name: "Dried Bean Sprout Husk", image: CatalogueDriedBeanSproutHusk },
 
-        { name: "Mason Jar Sprouting Kit", image: CatalogueBeansproutsImage },
+        { name: "Mason Jar Sprouting Kit", image: OtherProductImage },
 
         {
           name: "Organic Broccoli Sprouting Seeds",
-          image: CatalogueBeansproutsImage,
+          image: OtherProductImage,
         },
         { name: "Organic Alfafa Sprouting Seeds", image: OtherProductImage },
         {

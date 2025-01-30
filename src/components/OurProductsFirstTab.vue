@@ -15,14 +15,15 @@
 <script>
 import { gsap } from "gsap";
 import BeanSproutImage from "@/assets/leaf.png"; // Update this path to your uploaded image
+
 import CatalogueBeansproutsImage from "@/assets/Catalogue_Beansprouts.png";
-import CatalogueSoybeanSproutsImage from "@/assets/Catalogue_Beansprouts.png";
+import CatalogueSoybeanSproutImage from "@/assets/Catalogue_SoybeanSprouts.png";
 export default {
   data() {
     return {
       products: [
         { name: "Beansprout", image: CatalogueBeansproutsImage },
-        { name: "Soybean Sprout", image: CatalogueSoybeanSproutsImage },
+        { name: "Soybean Sprout", image: CatalogueSoybeanSproutImage },
       ],
     };
   },
