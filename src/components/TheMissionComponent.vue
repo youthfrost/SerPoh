@@ -7,16 +7,13 @@
           ‘ To produce a continuous supply of local beansprouts. ’
         </p>
         <p class="description">A sense of duty keeps us going.</p>
-        <p class="description">
-          A day-to-day routine of sow and harvest. 
-        </p>
-        <p class="description">Simple yet
-          sophisticated.</p>
+        <p class="description">A day-to-day routine of sow and harvest.</p>
+        <p class="description">Simple yet sophisticated.</p>
       </div>
     </div>
     <div class="rightContainer" ref="rightContainer">
       <img
-        src="@/assets/BarrelBeansprout01.png"
+        src="@/assets/BarrelBeansprouts_cube4-01.png"
         alt="Serum Bottle"
         class="missionImage"
       />
