@@ -1,23 +1,24 @@
 <template>
   <div class="bigContainer">
     <div class="content">
-      <p>
-        Start your journey to cultivating fresh and nutritious beansprouts at home.
-        It's easy, fun, and rewarding! 
-      </p>
-      
       <div class="content-link-qr">
-        <ul style="list-style-type: disc; padding-left: 20px;">
-          <p>Get started now!</p>
+        <ul>
           <li>
-            Buy Seeds:
-            <a href="https://form.jotform.com/serpoh1992/serious-sprout-order-form" target="_blank" rel="noopener noreferrer">
-              Click here to explore our seed collection.
+            <p style="padding: 10px 0">
+              Start your journey to cultivating fresh and nutritious beansprouts
+              at home. It's easy, fun, and rewarding!
+            </p>
+            <a
+              href="https://form.jotform.com/serpoh1992/serious-sprout-order-form"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Click here
             </a>
+            to explore our seed collection or scan the QR code on the right.
           </li>
-          <li>Or scan the QR code on the right.</li>
         </ul>
-      
+
         <img src="@/assets/qr-code-serious.png" alt="QR Code" class="qr-code" />
       </div>
     </div>
@@ -42,9 +43,18 @@ export default {
         { name: "Mason Jar Sprouting Kit", image: OtherProductImage },
         { name: "Organic Broccoli Sprouting Seeds", image: OtherProductImage },
         { name: "Organic Alfafa Sprouting Seeds", image: OtherProductImage },
-        { name: "Organic Crimson Clover Sprouting Seeds", image: OtherProductImage },
-        { name: "Organic Radish (Daikon Minowase) Sprouting Seeds", image: OtherProductImage },
-        { name: "Organic Radish (Red Vulcano) Sprouting Seeds", image: OtherProductImage },
+        {
+          name: "Organic Crimson Clover Sprouting Seeds",
+          image: OtherProductImage,
+        },
+        {
+          name: "Organic Radish (Daikon Minowase) Sprouting Seeds",
+          image: OtherProductImage,
+        },
+        {
+          name: "Organic Radish (Red Vulcano) Sprouting Seeds",
+          image: OtherProductImage,
+        },
       ],
     };
   },
@@ -62,7 +72,6 @@ export default {
 <style scoped>
 @import url("https://fonts.cdnfonts.com/css/maharlika");
 
-
 .bigContainer {
   width: 100%;
   display: flex;
@@ -74,21 +83,21 @@ export default {
   text-align: left;
   margin-bottom: 20px;
   padding: 20px;
-  font-family: "Maharlika";
+  /*font-family: "Maharlika"; */
+  font-family: "Bauhaus Std", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
   width: 55%;
   display: flex;
-  flex-direction: column; 
-  font-size: 17px;
-  font-weight: 1000;
+  flex-direction: column;
 }
 .content-link-qr {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 
 .content p {
-
   color: #333;
   margin: 0;
 }
@@ -156,11 +165,11 @@ export default {
     font-size: 13px;
   }
   .qr-code {
-  width: 60px; /* Set the desired width */
-  max-height: 100%; /* Prevent it from exceeding the container's height */
-  object-fit: contain; /* Ensures it respects its aspect ratio */
-  margin-top: 10px;
-}
+    width: 60px; /* Set the desired width */
+    max-height: 100%; /* Prevent it from exceeding the container's height */
+    object-fit: contain; /* Ensures it respects its aspect ratio */
+    margin-top: 10px;
+  }
 
   .product {
     width: 200px;

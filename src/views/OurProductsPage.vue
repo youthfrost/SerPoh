@@ -32,7 +32,7 @@
             :class="{ active: activeTab === 'third' }"
             @click="activeTab = 'third'"
           >
-            Grow your own sprouts
+            Grow Your Own Sprouts
           </button>
         </div>
       </div>
@@ -128,6 +128,9 @@ export default {
   padding-bottom: 100px;
   z-index: 1000;
   pointer-events: auto;
+  font-family: "Bauhaus Std", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .content {
@@ -157,6 +160,9 @@ export default {
   color: #6e8379;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "Bauhaus Std", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .tab.active {

@@ -10,7 +10,7 @@
             @mouseenter="animateUnderline($event, true)"
             @mouseleave="animateUnderline($event, false)"
           >
-            Home
+            HOME
             <span
               class="underline"
               :style="{ backgroundColor: textColor }"
@@ -25,7 +25,7 @@
             @mouseenter="animateUnderline($event, true)"
             @mouseleave="animateUnderline($event, false)"
           >
-            Catalogue
+            CATALOGUE
             <span
               class="underline"
               :style="{ backgroundColor: textColor }"
@@ -40,7 +40,7 @@
             @mouseenter="animateUnderline($event, true)"
             @mouseleave="animateUnderline($event, false)"
           >
-            Contact Us
+            CONTACT US
             <span
               class="underline"
               :style="{ backgroundColor: textColor }"
@@ -183,8 +183,10 @@ li {
 button {
   background: none;
   border: none;
-  font-family: "Maharlika", sans-serif;
+  /*font-family: "Maharlika", sans-serif;*/
+  font-family: "Bauhaus Std", sans-serif;
   font-size: 16px;
+  font-weight: 500;
   color: white;
   transition: color 0.3s ease;
   cursor: pointer;

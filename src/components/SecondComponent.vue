@@ -103,7 +103,7 @@ export default {
   background-color: #e8e4e4;
 }
 .leafImage {
-  max-width: 50%;
+  max-width: 70%;
 }
 .rightContainer {
   flex: 0.5;
@@ -153,21 +153,23 @@ export default {
 @media (max-width: 768px) {
   .secondComponent {
     flex-direction: column;
-    height: 100vh;
+    height: 70vh;
   }
   .leftContainer {
     justify-content: center;
     align-items: center;
     height: 30%;
+    flex: 0.3;
   }
   .rightContainer {
     align-items: center;
     text-align: center;
     height: 70%;
     margin: 0 10%;
+    flex: 0.7;
   }
   .bigWords-container {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
   }
   .text-container {
     flex: 1;

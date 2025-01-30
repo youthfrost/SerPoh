@@ -11,7 +11,9 @@
       </div>
     </div>
     <div class="rightContainer" ref="rightContainer">
-      <p><img src="@/assets/leaf.png" alt="Leaf" class="leafImage" /></p>
+      <p>
+        <img src="@/assets/IntroFirstPic.png" alt="Leaf" class="leafImage" />
+      </p>
     </div>
   </div>
 </template>
@@ -137,8 +139,7 @@ export default {
 }
 
 .leafImage {
-  height: 100%;
-  object-fit: cover;
+  width: 100%;
 }
 
 .shopButton {
