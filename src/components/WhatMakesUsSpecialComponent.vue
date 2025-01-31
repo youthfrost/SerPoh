@@ -100,6 +100,7 @@ export default {
   height: 100vh;
   background-color: #ffe9eb;
   justify-content: center;
+  min-height: 500px;
 }
 .bigWords-container {
   flex: 0.5;

@@ -103,6 +103,7 @@ export default {
   display: flex;
   flex-direction: row;
   height: 95vh;
+  min-height: 750px;
 }
 
 .leftContainer {

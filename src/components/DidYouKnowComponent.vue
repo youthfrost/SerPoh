@@ -127,10 +127,11 @@ export default {
   background: linear-gradient(135deg, #4b4949, #111111);
   color: #ffffff;
   justify-content: center;
+  min-height: 650px;
 }
 
 .bigWords-container {
-  flex: 0.3;
+  flex: 0.2;
   display: flex;
   align-items: end;
   justify-content: center;
@@ -142,6 +143,8 @@ export default {
   font-family: "Brusher", sans-serif;
   color: #ffffff;
   text-shadow: 2px 2px 4px #000000;
+  padding: 10px;
+  position: relative;
 }
 
 .contentContainer {
@@ -178,7 +181,9 @@ hr {
 }
 
 .contact-bar {
+  flex: 0.2;
   display: flex;
+
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
@@ -265,20 +270,6 @@ hr {
     font-size: 14px;
   }
 
-  .contentContainer {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .factContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-  }
-
   .description,
   hr {
     margin-left: auto;
@@ -293,7 +284,10 @@ hr {
   .description {
     font-size: 12px;
   }
-
+  .contentContainer {
+    flex-direction: column;
+    align-items: center;
+  }
   .contact-social-container {
     flex-direction: column;
   }
@@ -302,6 +296,11 @@ hr {
     align-items: center;
   }
   .factContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
   }
 }
