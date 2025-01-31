@@ -103,7 +103,7 @@ export default {
   display: flex;
   flex-direction: row;
   height: 95vh;
-  min-height: 750px;
+  min-height: 550px;
 }
 
 .leftContainer {
@@ -216,6 +216,7 @@ export default {
   .firstComponent {
     flex-direction: column;
     height: 135vh;
+    min-height: 750px;
   }
   .leftContainer {
     flex: 0.66;

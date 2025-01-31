@@ -127,7 +127,7 @@ export default {
   background: linear-gradient(135deg, #4b4949, #111111);
   color: #ffffff;
   justify-content: center;
-  min-height: 650px;
+  min-height: 400px;
 }
 
 .bigWords-container {
@@ -151,13 +151,13 @@ export default {
   flex: 0.6;
   display: flex;
   justify-content: space-around;
-  padding: 0 10% 10% 10%;
+  padding: 0 10% 0% 10%;
 }
 
 .factContainer {
   display: flex;
   flex-direction: column;
-  margin-top: 10%;
+  margin-top: 5%;
   flex: 0.3;
 }
 
@@ -278,6 +278,9 @@ hr {
 }
 
 @media (max-width: 576px) {
+  .didYouKnowComponent {
+    min-height: 650px;
+  }
   .bigWords {
     font-size: 30px;
   }

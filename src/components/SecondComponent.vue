@@ -98,6 +98,7 @@ export default {
   flex-direction: row;
   height: 80vh;
   background-color: #e8e4e4;
+  min-height: 450px;
 }
 .leftContainer {
   flex: 0.5;
@@ -155,24 +156,6 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .secondComponent {
-    flex-direction: column;
-    /*changed from 90vh*/
-    height: 600px;
-  }
-  .leftContainer {
-    justify-content: center;
-    align-items: center;
-    height: 30%;
-    flex: 0.3;
-  }
-  .rightContainer {
-    align-items: flex-start;
-    text-align: center;
-    margin: 0 8%;
-    flex: 0.7;
-  }
-
   .bigWords-container {
     margin-bottom: 10px;
   }
@@ -191,6 +174,23 @@ export default {
 }
 
 @media (max-width: 576px) {
+  .secondComponent {
+    flex-direction: column;
+    /*changed from 90vh*/
+    height: 600px;
+  }
+  .leftContainer {
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    flex: 0.3;
+  }
+  .rightContainer {
+    align-items: flex-start;
+    text-align: center;
+    margin: 0 8%;
+    flex: 0.7;
+  }
   .bigWords {
     font-size: 30px;
   }

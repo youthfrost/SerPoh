@@ -152,22 +152,6 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .missionComponent {
-    flex-direction: column;
-    text-align: center;
-    /*change from vp*/
-    height: 600px;
-    flex: 1;
-  }
-  .leftContainer {
-    flex: 0.5;
-  }
-  .rightContainer {
-    flex: 0.5;
-  }
-  .textContainer {
-    margin: 10%;
-  }
   .title {
     font-size: 40px;
   }
@@ -188,11 +172,22 @@ export default {
 }
 
 @media (max-width: 576px) {
-  /*
   .missionComponent {
-    height: 80vh;
+    flex-direction: column;
+    text-align: center;
+    /*change from vp*/
+    height: 600px;
+    flex: 1;
   }
-*/
+  .leftContainer {
+    flex: 0.5;
+  }
+  .rightContainer {
+    flex: 0.5;
+  }
+  .textContainer {
+    margin: 10%;
+  }
   .title {
     font-size: 35px;
   }
