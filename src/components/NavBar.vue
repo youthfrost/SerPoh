@@ -89,18 +89,26 @@ export default {
     },
   },
   methods: {
+    smoothScrollToTop() {
+      const scrollStep = () => {
+        const currentScroll = window.scrollY;
+        if (currentScroll > 0) {
+          window.scrollTo(0, currentScroll - currentScroll / 10); // Smooth easing
+          requestAnimationFrame(scrollStep);
+        }
+      };
+      requestAnimationFrame(scrollStep);
+    },
     navigateTo(sectionId, index) {
       // Emit different events based on the button clicked
       switch (sectionId) {
         case "landing":
           if (this.$route.path === "/") {
             setTimeout(() => {
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              this.smoothScrollToTop(); // Call smooth scrolling function
             }, 500);
           } else {
-            // Route to the landing page
             this.$router.push("/");
-            // Emit events for scrolling and component update
             this.$emit("update:isScrolling", true);
             this.$emit("update:whichComponent", 0);
           }
@@ -108,11 +116,14 @@ export default {
         case "ourproducts":
           // Route to the OurProducts page
           this.$router.push("/OurProducts");
-          window.scrollTo({ top: 0, behavior: "smooth" });
+          this.smoothScrollToTop();
+          //window.scrollTo({ top: 0, behavior: "smooth" });
+
           break;
         case "contactus":
           this.$router.push("/ContactUs"); // Do something else for the Contact Us button if needed
-          window.scrollTo({ top: 0, behavior: "smooth" });
+          this.smoothScrollToTop();
+          //window.scrollTo({ top: 0, behavior: "smooth" });
           break;
         default:
           break;

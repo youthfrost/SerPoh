@@ -29,7 +29,7 @@ export default {
       products: [
         { name: "Beansprout", image: CatalogueBeansproutsImage },
         { name: "Soybean Sprout", image: CatalogueSoybeanSproutImage },
-        { name: "Dried Bean Sprout Husk", image: CatalogueDriedBeanSproutHusk },
+        { name: "Dried Beansprout Husk", image: CatalogueDriedBeanSproutHusk },
 
         { name: "Mason Jar Sprouting Kit", image: OtherProductImage },
 

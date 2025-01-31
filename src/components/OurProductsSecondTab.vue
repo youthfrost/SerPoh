@@ -1,24 +1,26 @@
 <template>
   <div class="bigContainer">
-  <div class="products">
-    <div class="product" v-for="(product, index) in products" :key="index">
-      <img :src="product.image" :alt="product.name" class="product-image" />
-      <p>{{ product.name }}</p>
+    <div class="products">
+      <div class="product" v-for="(product, index) in products" :key="index">
+        <img :src="product.image" :alt="product.name" class="product-image" />
+        <p>{{ product.name }}</p>
+      </div>
     </div>
-  </div>
   </div>
 </template>
 
 <script>
 import { gsap } from "gsap";
-import SoyBeanSproutImage from "@/assets/leaf.png"; // Update this path to your uploaded image
-
+import CatalogueDriedBeanSproutHusk from "@/assets/Catalogue_BeansproutHusks.png";
 export default {
   data() {
     return {
       products: [
-        { name: "Dried Beansprout Husk", weight: "", image: SoyBeanSproutImage },
- 
+        {
+          name: "Dried Beansprout Husk",
+          weight: "",
+          image: CatalogueDriedBeanSproutHusk,
+        },
       ],
     };
   },
@@ -47,7 +49,6 @@ export default {
   gap: 20px;
   justify-content: center;
 }
-
 
 .product {
   background-color: #fff;

@@ -39,46 +39,8 @@
         </div>
       </div>
     </div>
-    <!--
-    <div class="contact-form-container" ref="formContainer">
-      <h1>Get in touch with us now!!!</h1>
-      <form @submit.prevent="submitForm" class="contact-form">
-        <div class="form-group">
-          <label for="name">Name/ Company:</label>
-          <input type="text" id="name" v-model="form.name" required />
-        </div>
 
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" v-model="form.email" required />
-        </div>
-
-        <div class="form-group">
-          <label for="description">Description:</label>
-          <textarea id="description" v-model="form.description"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="submit"></label>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
-    -->
-    <!--
-    <div class="contact-form-container">
-      <h1>Get In Touch With Us Now!!!</h1>
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSfcYZfl6mrRGskZFfVh-uvS6ETtURPBx6XAc2ZeGmDwahS6LA/viewform?embedded=true"
-        width="640"
-        height="800"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-        >Loading…</iframe
-      >
-    </div>
-    -->
-    <div class="contact-form-container">
+    <div class="contact-form-container" ref="contactFormContainer">
       <iframe
         id="JotFormIFrame-250242317554047"
         title="Serpoh Enquiry"
@@ -149,7 +111,7 @@ export default {
       this.isScrolling = window.scrollY > 0;
     },
     animateForm() {
-      gsap.from(this.$refs.formContainer, {
+      gsap.from(this.$refs.contactFormContainer, {
         opacity: 0,
         y: 50,
         duration: 1,
@@ -170,14 +132,6 @@ export default {
         duration: 1,
         ease: "power4.out",
         delay: 0.5,
-      });
-
-      gsap.from(".contact-item", {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        ease: "power4.out",
-        stagger: 0.2, // Add stagger to animate each contact item with a delay
       });
     },
   },
@@ -320,6 +274,25 @@ export default {
   border-radius: 10px; /* Add rounded corners to match the form container */
 }
 
+/* High-contrast mode support */
+@media (forced-colors: active) {
+  body {
+    background-color: Canvas;
+    color: CanvasText;
+  }
+
+  a {
+    color: LinkText;
+  }
+
+  button {
+    background-color: ButtonFace;
+    color: ButtonText;
+    border: 1px solid ButtonText;
+  }
+}
+
+/* Responsive adjustments */
 @media (max-width: 1200px) {
   .contact-form-container iframe {
     height: 600px; /* Adjust height for smaller screens */
@@ -331,15 +304,10 @@ export default {
   }
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .contact-form-container iframe {
     height: 600px; /* Adjust height for smaller screens */
     width: 100%;
-  }
-  .contact-form-container iframe {
-    height: 600px; /* Adjust height for smaller screens */
-    width: 100%; /* Make it responsive */
   }
   .contact-info {
     flex-direction: column;
