@@ -226,7 +226,9 @@ button {
   }
   nav {
     display: flex;
-    flex: 0.7;
+    flex: 1;
+    padding: 0px 10px;
+    white-space: nowrap;
   }
 }
 </style>
