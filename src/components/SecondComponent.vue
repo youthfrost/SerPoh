@@ -157,20 +157,20 @@ export default {
 @media (max-width: 768px) {
   .secondComponent {
     flex-direction: column;
-    height: 90vh;
+    /*changed from 90vh*/
+    height: 600px;
   }
   .leftContainer {
     justify-content: center;
     align-items: center;
     height: 30%;
-    flex: 0.2;
+    flex: 0.3;
   }
   .rightContainer {
-    align-items: center;
+    align-items: flex-start;
     text-align: center;
-    height: 70%;
-    margin: 0 10%;
-    flex: 0.8;
+    margin: 0 8%;
+    flex: 0.7;
   }
 
   .bigWords-container {

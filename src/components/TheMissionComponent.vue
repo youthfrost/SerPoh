@@ -155,7 +155,8 @@ export default {
   .missionComponent {
     flex-direction: column;
     text-align: center;
-    height: 80vh;
+    /*change from vp*/
+    height: 600px;
     flex: 1;
   }
   .leftContainer {
@@ -187,10 +188,11 @@ export default {
 }
 
 @media (max-width: 576px) {
+  /*
   .missionComponent {
     height: 80vh;
   }
-
+*/
   .title {
     font-size: 35px;
   }
