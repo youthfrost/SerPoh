@@ -44,7 +44,7 @@
       <iframe
         id="JotFormIFrame-250242317554047"
         title="Serpoh Enquiry"
-        onload="window.parent.scrollTo(0,0)"
+        
         allowtransparency="true"
         allow="geolocation; microphone; camera; fullscreen"
         src="https://form.jotform.com/serpoh1992/serpoh-enquiry"

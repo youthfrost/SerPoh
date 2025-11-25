@@ -99,6 +99,9 @@ export default {
       };
       requestAnimationFrame(scrollStep);
     },
+    smoothScrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
     navigateTo(sectionId, index) {
       // Emit different events based on the button clicked
       switch (sectionId) {
@@ -106,6 +109,7 @@ export default {
           if (this.$route.path === "/") {
             setTimeout(() => {
               this.smoothScrollToTop(); // Call smooth scrolling function
+              this.$emit("update:whichComponent", 0);
             }, 500);
           } else {
             this.$router.push("/");
@@ -114,16 +118,26 @@ export default {
           }
           break;
         case "ourproducts":
-          // Route to the OurProducts page
-          this.$router.push("/OurProducts");
-          this.smoothScrollToTop();
-          //window.scrollTo({ top: 0, behavior: "smooth" });
-
+          if (this.$route.path === "/OurProducts") {
+            setTimeout(() => {
+              this.smoothScrollToTop();
+              this.$emit("update:whichComponent", 1);
+            }, 300);
+          } else {
+            this.$router.push("/OurProducts");
+            this.$emit("update:whichComponent", 1);
+          }
           break;
         case "contactus":
-          this.$router.push("/ContactUs"); // Do something else for the Contact Us button if needed
-          this.smoothScrollToTop();
-          //window.scrollTo({ top: 0, behavior: "smooth" });
+          if (this.$route.path === "/ContactUs") {
+            setTimeout(() => {
+              this.smoothScrollToTop();
+              this.$emit("update:whichComponent", 6);
+            }, 300);
+          } else {
+            this.$router.push("/ContactUs");
+            this.$emit("update:whichComponent", 6);
+          }
           break;
         default:
           break;

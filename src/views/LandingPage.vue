@@ -72,8 +72,10 @@ export default {
     checkMobile() {
       this.isMobile = window.innerWidth <= 768;
     },
+    
     initScrollTrigger() {
       if (!this.isMobile) {
+      //if (false) {
         let components = Array.from(document.querySelectorAll(".component"));
         this.tops = components.map(
           (component, index) =>
@@ -135,6 +137,10 @@ export default {
     },
     handleScroll() {
       this.isScrolling = window.scrollY > 0;
+      if (window.scrollY === 0) {
+      this.whichComponent = 0;
+    }
+    // Optionally, add logic to update whichComponent based on scroll position
     },
     shouldSnap(progress, self) {
       const nearestComponents = [null, null]; // Initialize array to store nearest component start positions
@@ -170,7 +176,7 @@ export default {
   /*font-family: "NeoGothis ADF Std", sans-serif;*/
   font-family: "Bauhaus Std", sans-serif;
   font-weight: 350;
-  padding-top: 10px;
+  padding-top: 0px;
   padding-bottom: 10px;
   background: rgb(232, 212, 215);
   /* Ensure the content does not overlap the navbar */
