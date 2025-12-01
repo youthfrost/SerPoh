@@ -12,45 +12,12 @@
 
 <script>
 import { gsap } from "gsap";
-import BeanSproutImage from "@/assets/leaf.png"; // Update this path to your uploaded image
-import SoyBeanSproutImage from "@/assets/leaf.png";
-import OtherProductImage from "@/assets/leaf.png";
-import CatalogueBeansproutsImage from "@/assets/Catalogue_Beansprouts.png";
-import CatalogueSoybeanSproutImage from "@/assets/Catalogue_SoybeanSprouts.png";
-import CatalogueDriedBeanSproutHusk from "@/assets/Catalogue_BeansproutHusks.png";
-import CatalogueMasonJarSproutingKit from "@/assets/Catalogue_Beansprouts.png";
-import CatalogueOrganicBroccoliSproutingSeeds from "@/assets/Catalogue_Beansprouts.png";
-import CatalogueOrganicAlfafaSproutingSeeds from "@/assets/Catalogue_Beansprouts.png";
-import CatalogueOrganicCrimsonCloverSproutingSeeds from "@/assets/Catalogue_Beansprouts.png";
-
+import { allProducts } from "@/data/products";
 export default {
   data() {
     return {
-      products: [
-        { name: "Beansprout", image: CatalogueBeansproutsImage },
-        { name: "Soybean Sprout", image: CatalogueSoybeanSproutImage },
-        { name: "Dried Beansprout Husk", image: CatalogueDriedBeanSproutHusk },
-
-        { name: "Mason Jar Sprouting Kit", image: OtherProductImage },
-
-        {
-          name: "Organic Broccoli Sprouting Seeds",
-          image: OtherProductImage,
-        },
-        { name: "Organic Alfafa Sprouting Seeds", image: OtherProductImage },
-        {
-          name: "Organic Crimson Clover Sprouting Seeds",
-          image: OtherProductImage,
-        },
-        {
-          name: "Organic Radish (Daikon Minowase) Sprouting Seeds",
-          image: OtherProductImage,
-        },
-        {
-          name: "Organic Radish (Red Vulcano) Sprouting Seeds",
-          image: OtherProductImage,
-        },
-      ],
+      products: allProducts,
+    
     };
   },
   mounted() {

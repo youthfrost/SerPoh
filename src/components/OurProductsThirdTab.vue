@@ -34,28 +34,12 @@
 
 <script>
 import { gsap } from "gsap";
-import OtherProductImage from "@/assets/leaf.png"; // Update this path to your uploaded image
+import { growProducts } from "@/data/products";
 
 export default {
   data() {
     return {
-      products: [
-        { name: "Mason Jar Sprouting Kit", image: OtherProductImage },
-        { name: "Organic Broccoli Sprouting Seeds", image: OtherProductImage },
-        { name: "Organic Alfafa Sprouting Seeds", image: OtherProductImage },
-        {
-          name: "Organic Crimson Clover Sprouting Seeds",
-          image: OtherProductImage,
-        },
-        {
-          name: "Organic Radish (Daikon Minowase) Sprouting Seeds",
-          image: OtherProductImage,
-        },
-        {
-          name: "Organic Radish (Red Vulcano) Sprouting Seeds",
-          image: OtherProductImage,
-        },
-      ],
+      products: growProducts,
     };
   },
   mounted() {

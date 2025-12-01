@@ -14,17 +14,11 @@
 
 <script>
 import { gsap } from "gsap";
-import BeanSproutImage from "@/assets/leaf.png"; // Update this path to your uploaded image
-
-import CatalogueBeansproutsImage from "@/assets/Catalogue_Beansprouts.png";
-import CatalogueSoybeanSproutImage from "@/assets/Catalogue_SoybeanSprouts.png";
+import { freshProducts } from "@/data/products";
 export default {
   data() {
     return {
-      products: [
-        { name: "Beansprout", image: CatalogueBeansproutsImage },
-        { name: "Soybean Sprout", image: CatalogueSoybeanSproutImage },
-      ],
+      products: freshProducts,
     };
   },
   mounted() {
@@ -58,7 +52,7 @@ export default {
 
 .products {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   justify-content: center;
 }
@@ -90,6 +84,12 @@ export default {
   font-weight: bold;
   color: #ff6600;
   margin-top: 20px;
+}
+@media (max-width: 1200px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
 }
 
 @media (max-width: 768px) {

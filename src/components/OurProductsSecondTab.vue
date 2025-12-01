@@ -11,17 +11,11 @@
 
 <script>
 import { gsap } from "gsap";
-import CatalogueDriedBeanSproutHusk from "@/assets/Catalogue_BeansproutHusks.png";
+import { upcycledProducts } from "@/data/products";
 export default {
   data() {
     return {
-      products: [
-        {
-          name: "Dried Beansprout Husk",
-          weight: "",
-          image: CatalogueDriedBeanSproutHusk,
-        },
-      ],
+      products: upcycledProducts,
     };
   },
   mounted() {
