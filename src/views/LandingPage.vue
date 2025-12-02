@@ -37,6 +37,9 @@ import SecondComponent from "@/components/SecondComponent.vue";
 import WhatMakesUsSpecialComponent from "@/components/WhatMakesUsSpecialComponent.vue";
 import TheMissionComponent from "@/components/TheMissionComponent.vue";
 import DidYouKnowComponent from "@/components/DidYouKnowComponent.vue";
+
+import { useHead } from '@vueuse/head'
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
@@ -47,6 +50,19 @@ export default {
     WhatMakesUsSpecialComponent,
     TheMissionComponent,
     DidYouKnowComponent,
+  },
+  setup() {
+    useHead({
+      title: 'Ser Poh Farming | Singapore Beansprouts Since 1992',
+      meta: [
+        {
+          name: 'description',
+          content: 'Discover Ser Poh Farming, growing beansprouts and a variety of fresh sprouts in Singapore since 1992. Learn about our pesticide-free produce, farming mission, sprouting seeds, and the benefits of sprouts for all ages.'
+        }
+      ]
+    });
+    // ...other setup logic if needed...
+    return {};
   },
   data() {
     return {

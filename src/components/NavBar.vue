@@ -3,10 +3,10 @@
     <nav class="nav">
       <ul>
         <li>
-          <button
+          <router-link
             class="nav-button"
             :style="{ color: textColor }"
-            @click="navigateTo('landing', 0)"
+            to="/"
             @mouseenter="animateUnderline($event, true)"
             @mouseleave="animateUnderline($event, false)"
           >
@@ -15,13 +15,13 @@
               class="underline"
               :style="{ backgroundColor: textColor }"
             ></span>
-          </button>
+          </router-link>
         </li>
         <li>
-          <button
+          <router-link
             class="nav-button"
             :style="{ color: textColor }"
-            @click="navigateTo('ourproducts', 1)"
+            to="/OurProducts"
             @mouseenter="animateUnderline($event, true)"
             @mouseleave="animateUnderline($event, false)"
           >
@@ -30,13 +30,15 @@
               class="underline"
               :style="{ backgroundColor: textColor }"
             ></span>
-          </button>
+          </router-link>
+          
         </li>
         <li>
-          <button
+          <router-link
             class="nav-button"
             :style="{ color: textColor }"
-            @click="navigateTo('contactus', 6)"
+            to="/ContactUs"
+            
             @mouseenter="animateUnderline($event, true)"
             @mouseleave="animateUnderline($event, false)"
           >
@@ -45,7 +47,7 @@
               class="underline"
               :style="{ backgroundColor: textColor }"
             ></span>
-          </button>
+          </router-link>
         </li>
       </ul>
     </nav>
@@ -222,7 +224,19 @@ button {
   position: relative;
   overflow: hidden; /* Add overflow hidden to hide the part of the underline that goes outside the button */
 }
-
+.nav-button {
+  background: none;
+  border: none;
+  font-family: "Bauhaus Std", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none; /* Remove underline from links */
+  outline: none;
+}
 .underline {
   position: absolute;
   bottom: 0;

@@ -62,11 +62,25 @@ import gsap from "gsap";
 import NavBar from "@/components/NavBar.vue";
 import LocationImage from "@/assets/location.png";
 import PhoneImage from "@/assets/phone.png";
+import { useHead } from '@vueuse/head'
 
 export default {
   name: "ContactUs",
   components: {
     NavBar,
+  },
+  setup() {
+    useHead({
+      title: 'Contact Us | Ser Poh Farming',
+      meta: [
+        {
+          name: 'description',
+          content: 'Contact Ser Poh Farming in Singapore for fresh beansprouts and sprouts. Find our location, phone, and enquiry form here.'
+        }
+      ]
+    });
+    // ...other setup logic if needed...
+    return {};
   },
   data() {
     return {

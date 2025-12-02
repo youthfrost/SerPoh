@@ -48,7 +48,7 @@ import OurProductsFirstTab from "@/components/OurProductsFirstTab.vue";
 import OurProductsSecondTab from "@/components/OurProductsSecondTab.vue";
 import OurProductsThirdTab from "@/components/OurProductsThirdTab.vue";
 import OurProductsAll from "@/components/OurProductsAll.vue"; // Import the new component
-
+import { useHead } from '@vueuse/head'
 export default {
   components: {
     NavBar,
@@ -56,6 +56,18 @@ export default {
     OurProductsSecondTab,
     OurProductsThirdTab,
     OurProductsAll, // Register the new component
+  },
+    setup() {
+    useHead({
+      title: 'Our Products | Ser Poh Farming',
+      meta: [
+        {
+          name: 'description',
+          content: 'Explore Ser Poh Farming’s full catalogue: fresh beansprouts, a variety of nutritious sprouts, upcycled products, and sprouting seeds. Grown and packed in Singapore for quality and freshness.'
+        }
+      ]
+    });
+    return {};
   },
   data() {
     return {
