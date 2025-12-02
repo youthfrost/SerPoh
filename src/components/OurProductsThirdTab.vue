@@ -4,10 +4,10 @@
       <div class="content-link-qr">
         <ul>
           <li>
-            <p style="padding: 10px 0">
-              Start your journey to cultivating fresh and nutritious sprouts at
+              <h2 class="sprout-heading">
+                Start your journey to cultivating fresh and nutritious sprouts at
               home. It's easy, fun, and rewarding!
-            </p>
+            </h2>
             <a
               href="https://form.jotform.com/serpoh1992/serious-sprout-order-form"
               target="_blank"
@@ -93,6 +93,11 @@ export default {
 
 .content ul li {
   margin: 5px 0;
+}
+.sprout-heading {
+  font-size: 17px;
+  font-weight: 400;
+  padding: 10px 0;
 }
 
 .qr-code {

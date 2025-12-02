@@ -1,7 +1,8 @@
 <template>
   <div class="whatWeDoComponent" ref="whatWeDoComponent">
     <div class="bigWords-container">
-      <p class="bigWords">What makes our beansprouts special</p>
+      <h1 class="bigWords">What makes our beansprouts special</h1>
+      
     </div>
     <div class="contentContainer">
       <div class="firstContainer" ref="container1">
@@ -116,6 +117,8 @@ export default {
   margin-top: 100px;
   font-size: 40px;
   color: #818b7e;
+  font-weight: 350;
+  
 }
 .contentContainer {
   flex: 0.5;

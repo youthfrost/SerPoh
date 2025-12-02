@@ -5,7 +5,7 @@
         <div class="logoContainer">
           <img class="logo" src="../assets/logo.png" alt="logo" />
         </div>
-        <p class="bigWords">farming beansprouts since 1992</p>
+        <h1 class="bigWords">farming beansprouts since 1992</h1>
         <!-- <p class="description">新保农业 专种豆芽</p>-->
         <button class="shopButton" @click="link">Catalogue</button>
       </div>
@@ -164,6 +164,7 @@ export default {
   margin-bottom: 30px;
   margin-top: 0;
   color: white;
+  font-weight: 350;
 }
 
 .description {

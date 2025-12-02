@@ -1,7 +1,7 @@
 <template>
   <div class="didYouKnowComponent" ref="didYouKnowComponent">
     <div class="bigWords-container">
-      <p class="bigWords">Rediscover TAUGE</p>
+      <h2 class="bigWords">Rediscover TAUGE</h2>
     </div>
     <div class="contentContainer">
       <div class="factContainer">

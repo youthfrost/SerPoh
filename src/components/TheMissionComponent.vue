@@ -2,10 +2,11 @@
   <div class="missionComponent" ref="missionComponent">
     <div class="leftContainer" ref="leftContainer">
       <div class="textContainer">
-        <h1 class="title">The Mission</h1>
-        <p class="quote">
+        <!-- <h1 class="title">The Mission</h1>-->
+        <p class="title">The Mission</p>
+        <h2 class="quote">
           ‘ To produce a continuous supply of local beansprouts. ’
-        </p>
+        </h2>
         <p class="description">A sense of duty keeps us going.</p>
         <p class="description">A day-to-day routine of sow and harvest.</p>
         <p class="description">Simple yet sophisticated.</p>
@@ -14,7 +15,7 @@
     <div class="rightContainer" ref="rightContainer">
       <img
         src="@/assets/BarrelBeansproutswSGLogo-02.png"
-        alt="Serum Bottle"
+        alt="BarrelBeansprouts"
         class="missionImage"
       />
     </div>
@@ -102,6 +103,7 @@ export default {
   font-size: 30px;
   margin: 30px 0;
   font-style: italic;
+  font-weight: 350;
 }
 
 .description {
