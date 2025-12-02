@@ -66,8 +66,10 @@
 @font-face {
     font-family: 'Aloja';
     src: url('Aloja-Light.woff');
+    font-display: swap;
 }
 @font-face {
     font-family: 'Brusher';
     src: url('Brusher.ttf');
+    font-display: swap;
 }

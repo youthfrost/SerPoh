@@ -42,11 +42,11 @@
         <div class="social-container">
           <p class="follow-us">Follow us on social media</p>
           <div class="social-icons">
-            <a href="https://www.facebook.com" target="_blank">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
               <i class="fab fa-facebook-f"></i>
             </a>
 
-            <a href="https://www.instagram.com" target="_blank">
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
               <i class="fab fa-instagram"></i>
             </a>
           </div>

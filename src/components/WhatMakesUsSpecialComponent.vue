@@ -7,7 +7,7 @@
     <div class="contentContainer">
       <div class="firstContainer" ref="container1">
         <div class="imgContainer">
-          <img style="width: 70px" src="../assets/water.png" alt="water" />
+          <img style="width: 70px" src="../assets/water-small.png" alt="water" />
         </div>
         <p class="description">
           Our traditional growing method somehow preserved the natural sweetness
@@ -16,7 +16,7 @@
       </div>
       <div class="secondContainer" ref="container2">
         <div class="imgContainer">
-          <img style="width: 70px" src="../assets/heart.png" alt="leaf" />
+          <img style="width: 70px" src="../assets/heart-small.png" alt="leaf" />
         </div>
         <p class="description">
           Our soybean sprouts are harvested while tender which makes it friendly
@@ -25,7 +25,7 @@
       </div>
       <div class="thirdContainer" ref="container3">
         <div class="imgContainer">
-          <img style="width: 70px" src="../assets/leaf.png" alt="leaf" />
+          <img style="width: 70px" src="../assets/leaf-small.png" alt="leaf" />
         </div>
         <p class="description">
           Our packed beansprouts are vacuum cooled to preserve freshness and
@@ -90,7 +90,6 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.cdnfonts.com/css/maharlika");
 
 .whatWeDoComponent {
   display: flex;

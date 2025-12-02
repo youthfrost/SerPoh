@@ -54,7 +54,7 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.cdnfonts.com/css/maharlika");
+/*@import url("https://fonts.cdnfonts.com/css/maharlika");  */
 
 .bigContainer {
   width: 100%;

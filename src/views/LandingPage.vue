@@ -6,7 +6,7 @@
       @update:isScrolling="isScrolling = $event"
       @update:whichComponent="whichComponent = $event"
     />
-    <div class="pageDisplay">
+    <main class="pageDisplay">
       <div class="component" id="first">
         <FirstComponent />
       </div>
@@ -23,7 +23,7 @@
       <div class="component" id="didyouknow">
         <DidYouKnowComponent />
       </div>
-    </div>
+    </main>
   </div>
 </template>
 

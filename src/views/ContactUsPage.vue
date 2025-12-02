@@ -10,7 +10,7 @@
           height="450"
           style="border: 0"
           allowfullscreen=""
-          loading="lazy"
+          
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
@@ -136,16 +136,16 @@ export default {
       gsap.from(this.$refs.contactInfo, {
         opacity: 0,
         y: 50,
-        duration: 1,
+        duration: 2,
         ease: "power4.out",
       });
 
       gsap.from(".map", {
         opacity: 0,
         scale: 0.9,
-        duration: 1,
+        duration: 2,
         ease: "power4.out",
-        delay: 0.5,
+        delay: 0,
       });
     },
   },
@@ -153,7 +153,8 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.cdnfonts.com/css/maharlika");
+/*
+@import url("https://fonts.cdnfonts.com/css/maharlika");*/
 
 .contact-us {
   font-family: "Bauhaus Std", sans-serif;

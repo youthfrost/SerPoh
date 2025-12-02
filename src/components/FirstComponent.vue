@@ -12,7 +12,7 @@
     </div>
     <div class="rightContainer" ref="rightContainer">
       <p>
-        <img src="@/assets/IntroFirstPic.png" alt="Leaf" class="leafImage" />
+        <img src="@/assets/IntroFirstPic.png" alt="Leaf" class="leafImage" fetchpriority="high" />
       </p>
     </div>
   </div>
@@ -96,8 +96,8 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.cdnfonts.com/css/maharlika");
-@import url("https://fonts.cdnfonts.com/css/long-cang");
+/*@import url("https://fonts.cdnfonts.com/css/maharlika");
+@import url("https://fonts.cdnfonts.com/css/long-cang");*/
 
 .firstComponent {
   display: flex;
