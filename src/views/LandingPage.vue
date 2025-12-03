@@ -193,7 +193,7 @@ export default {
   font-family: "Bauhaus Std", sans-serif;
   font-weight: 350;
   padding-top: 0px;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   background: rgb(232, 212, 215);
   /* Ensure the content does not overlap the navbar */
 }

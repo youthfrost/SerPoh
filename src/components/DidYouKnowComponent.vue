@@ -42,13 +42,15 @@
         <div class="social-container">
           <p class="follow-us">Follow us on social media</p>
           <div class="social-icons">
+  
             <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
-              <i class="fab fa-facebook-f"></i>
+              <img src="@/assets/facebook-f-brands-solid-full.svg" alt="Facebook" style="width:24px; height:24px;" />
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+              <img src="@/assets/instagram-brands-solid-full.svg" alt="Instagram" style="width:24px; height:24px;" /> 
             </a>
 
-            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
+    
           </div>
         </div>
       </div>
@@ -115,8 +117,8 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
-
+/*@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+*/
 .didYouKnowComponent {
   display: flex;
   flex: 1;
@@ -234,14 +236,12 @@ hr {
   margin-top: 10px;
 }
 
-.social-icons a {
-  color: #ffffff;
-  font-size: 24px;
-  transition: color 0.3s;
+.social-icons a img {
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s;
 }
-
-.social-icons a:hover {
-  color: #cccccc;
+.social-icons a:hover img {
+  filter: brightness(0) invert(0.8);
 }
 
 @media (max-width: 1200px) {

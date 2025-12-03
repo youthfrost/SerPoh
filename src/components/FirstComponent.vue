@@ -216,14 +216,19 @@ export default {
 @media (max-width: 576px) {
   .firstComponent {
     flex-direction: column;
-    height: 135vh;
-    min-height: 750px;
+    height: auto;
+    min-height: unset;
+    /*height: 135vh;
+    min-height: 750px;*/
   }
   .leftContainer {
-    flex: 0.66;
+    /*flex: 0.66; */
+    width: 100%;
+    min-height: 75vh
   }
   .rightContainer {
-    flex: 0.33;
+    /*flex: 0.33;*/
+    width: 100%;
     /*height: 400px;*/
     /*min-height: calc(100vw * 1.1);*/
   }
