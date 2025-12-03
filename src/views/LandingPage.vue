@@ -57,7 +57,7 @@ export default {
       meta: [
         {
           name: 'description',
-          content: 'Discover Ser Poh Farming, growing beansprouts and a variety of fresh sprouts in Singapore since 1992. Learn about our pesticide-free produce, farming mission, sprouting seeds, and the benefits of sprouts for all ages.'
+          content: 'Ser Poh Farming, a leading bean sprout farm in Singapore since 1992, produces fresh pesticide-free bean sprouts and locally grown sprouts. We also provide premium sprouting seeds for those who want to grow their own.'
         }
       ]
     });

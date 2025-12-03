@@ -59,11 +59,11 @@ export default {
   },
     setup() {
     useHead({
-      title: 'Our Products | Ser Poh Farming',
+      title: 'Ser Poh Farming Products | Singapore Beansprouts Since 1992',
       meta: [
         {
           name: 'description',
-          content: 'Explore Ser Poh Farming’s full catalogue: fresh beansprouts, a variety of nutritious sprouts, upcycled products, and sprouting seeds. Grown and packed in Singapore for quality and freshness.'
+          content: 'Discover Ser Poh Farming’s fresh bean sprouts and premium nutritious sprouts, including alfalfa and broccoli. Also explore upcycled products and sprouting seeds, locally grown in Singapore.'
         }
       ]
     });

@@ -71,11 +71,11 @@ export default {
   },
   setup() {
     useHead({
-      title: 'Contact Us | Ser Poh Farming',
+      title: 'Contact Ser Poh Farming | Singapore Beansprouts Since 1992',
       meta: [
         {
           name: 'description',
-          content: 'Contact Ser Poh Farming in Singapore for fresh beansprouts and sprouts. Find our location, phone, and enquiry form here.'
+          content: 'Contact Ser Poh Farming in Singapore for fresh bean sprouts, premium sprouts, and sprouting seeds to grow your own. Find our location, phone, and enquiry form here.'
         }
       ]
     });
