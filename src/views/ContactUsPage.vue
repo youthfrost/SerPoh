@@ -1,6 +1,7 @@
 <template>
   <div class="contact-us">
-    <NavBar :isScrolling="isScrolling" :whichComponent="whichComponent" />
+    <EventsBar />
+    <NavBar :isScrolling="isScrolling" :whichComponent="whichComponent" :hasEventsBar="true" />
 
     <div class="contact-info" ref="contactInfo">
       <div class="map">
@@ -63,11 +64,12 @@ import NavBar from "@/components/NavBar.vue";
 import LocationImage from "@/assets/location.png";
 import PhoneImage from "@/assets/phone.png";
 import { useHead } from '@vueuse/head'
-
+import EventsBar from "@/components/EventsBar.vue";
 export default {
   name: "ContactUs",
   components: {
     NavBar,
+    EventsBar
   },
   setup() {
     useHead({
@@ -94,6 +96,7 @@ export default {
       whichComponent: 6,
       PhoneImage,
       LocationImage,
+      hasEventsBar: true, 
     };
   },
 

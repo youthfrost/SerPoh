@@ -102,7 +102,7 @@ export default {
 .firstComponent {
   display: flex;
   flex-direction: row;
-  height: 95vh;
+  height: 85vh;
   min-height: 550px;
 }
 

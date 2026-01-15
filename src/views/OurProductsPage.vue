@@ -1,7 +1,8 @@
 <template>
   <div>
-    <NavBar :isScrolling="isScrolling" :whichComponent="whichComponent" />
-    <div class="ourProducts">
+    <EventsBar />
+    <NavBar :isScrolling="isScrolling" :hasEventsBar="true" :whichComponent="whichComponent" />
+    <div class="ourProducts" :style="{ paddingTop: hasEventsBar ? '90px' : '50px' }">
       <div class="content">
         <img src="@/assets/Title.png" alt="Banner" id="bannerImage" />
 
@@ -49,6 +50,7 @@ import OurProductsSecondTab from "@/components/OurProductsSecondTab.vue";
 import OurProductsThirdTab from "@/components/OurProductsThirdTab.vue";
 import OurProductsAll from "@/components/OurProductsAll.vue"; // Import the new component
 import { useHead } from '@vueuse/head'
+import EventsBar from "@/components/EventsBar.vue";
 export default {
   components: {
     NavBar,
@@ -56,6 +58,7 @@ export default {
     OurProductsSecondTab,
     OurProductsThirdTab,
     OurProductsAll, // Register the new component
+    EventsBar
   },
     setup() {
     useHead({
@@ -74,6 +77,7 @@ export default {
       isScrolling: false,
       whichComponent: 2,
       activeTab: "all", // Default to "all" to show the new component
+      hasEventsBar: true,
     };
   },
   computed: {

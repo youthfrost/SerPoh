@@ -1,5 +1,7 @@
 <template>
-  <div :class="['navbar', { scrolling: isScrolling }]">
+  <div :class="['navbar', { scrolling: isScrolling }]"
+   :style="{ top: hasEventsBar ? '40px' : '0px' }"
+  >
     <nav class="nav">
       <ul>
         <li>
@@ -67,6 +69,10 @@ export default {
     whichComponent: {
       type: Number,
       default: 0,
+    },
+    hasEventsBar: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {
@@ -172,7 +178,8 @@ export default {
 
 .navbar {
   position: fixed;
-  top: 0;
+  /*top: 0;*/
+  top: 35px; 
   width: 100%;
   background: transparent; /* Slightly transparent background */
   z-index: 1001;

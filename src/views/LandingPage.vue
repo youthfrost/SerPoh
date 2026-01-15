@@ -1,12 +1,15 @@
 <template>
   <div>
+    <EventsBar />
     <NavBar
       :isScrolling="isScrolling || isMobile"
+      :hasEventsBar="true"
       :whichComponent="whichComponent"
       @update:isScrolling="isScrolling = $event"
       @update:whichComponent="whichComponent = $event"
     />
-    <main class="pageDisplay">
+    <main class="pageDisplay"
+    :style="{ paddingTop: hasEventsBar ? '40px' : '0px' }">
       <div class="component" id="first">
         <FirstComponent />
       </div>
@@ -37,6 +40,7 @@ import SecondComponent from "@/components/SecondComponent.vue";
 import WhatMakesUsSpecialComponent from "@/components/WhatMakesUsSpecialComponent.vue";
 import TheMissionComponent from "@/components/TheMissionComponent.vue";
 import DidYouKnowComponent from "@/components/DidYouKnowComponent.vue";
+import EventsBar from "@/components/EventsBar.vue";
 
 import { useHead } from '@vueuse/head'
 
@@ -50,6 +54,7 @@ export default {
     WhatMakesUsSpecialComponent,
     TheMissionComponent,
     DidYouKnowComponent,
+    EventsBar
   },
   setup() {
     useHead({
@@ -71,6 +76,7 @@ export default {
       isScrolling: false,
       shouldSnapBoolean: false,
       tops: [], // Array to store component start positions
+      hasEventsBar: true, 
     };
   },
   mounted() {
@@ -92,10 +98,11 @@ export default {
     initScrollTrigger() {
       if (!this.isMobile) {
       //if (false) {
+        let offset = this.hasEventsBar ? 40 : 0;
         let components = Array.from(document.querySelectorAll(".component"));
         this.tops = components.map(
           (component, index) =>
-            component.getBoundingClientRect().top + window.scrollY
+            component.getBoundingClientRect().top + window.scrollY - offset
         );
 
         // Add the bottom of the last component to the tops array
@@ -192,10 +199,10 @@ export default {
   /*font-family: "NeoGothis ADF Std", sans-serif;*/
   font-family: "Bauhaus Std", sans-serif;
   font-weight: 350;
-  padding-top: 0px;
   padding-bottom: 0px;
   background: rgb(232, 212, 215);
   /* Ensure the content does not overlap the navbar */
+
 }
 
 @media (max-width: 576px) {
